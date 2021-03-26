@@ -1,4 +1,5 @@
 import './App.css';
+import React, { useState } from 'react';
 
 import Layout from './components/Layout/Index';
 import Input from './components/Input/Index';
@@ -6,13 +7,21 @@ import Button from './components/Button/index';
 
 import { FcLock } from 'react-icons/fc';
 
-function App() {
+const App = () => {
+  const [password, setPassword] = useState('');
+
   const handleClick = (e) => {
     e.preventDefault();
-    const randomLowerCaseLetter =
-      Math.floor(Math.random() * (122 - 97 + 1)) + 97;
-    const lowerCaseLetter = String.fromCharCode(randomLowerCaseLetter);
-    console.log(lowerCaseLetter);
+    let randomPassword = '';
+    for (let step = 0; step < 20; step++) {
+      const getRandomLower = () => {
+        return String.fromCharCode(
+          Math.floor(Math.random() * (122 - 97 + 1)) + 97
+        );
+      };
+      randomPassword += getRandomLower();
+    }
+    setPassword(randomPassword);
   };
   return (
     <Layout>
@@ -21,10 +30,10 @@ function App() {
       <div className="input-container">
         <FcLock size={35} className={'lock-icon'} />
         <Input />
-        <Button handleClick={handleClick} />
+        <Button handleClick={(e) => handleClick(e)} />
       </div>
     </Layout>
   );
-}
+};
 
 export default App;
