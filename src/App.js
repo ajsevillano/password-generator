@@ -6,6 +6,10 @@ function App() {
   return (
     <Layout>
       <h1>Password Generator</h1>
+      <div className="input-container">
+        <input type="text" />
+        <button>Generate</button>
+      </div>
     </Layout>
   );
 }

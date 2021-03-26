@@ -7,26 +7,44 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: #e6e7e9;
+  background-color: white;
   color: #0b2138;
 }
 
 .container {
   display: flex;
+  height: 100vh;
 }
 
 .side {
   background-color: #ff4163;
-  height: 100vh;
   width: 30%;
 }
 
 .main-contain {
   width: 70%;
+  flex-direction: column;
   display: flex;
-  justify-content: left;
-  align-items: center;
+  justify-content: center;
+  align-items: left;
   margin-left: 40px;
+}
+
+.input-container {
+  display: flex;
+}
+
+.input-container input {
+  width: 50%;
+  margin-right: 20px;
+  border: 1px solid #e1e4e8;
+  border-radius: 4px;
+  outline: none;
+  padding: 14px 14px 14px 48px;
+  font-size: 0.9rem;
+  color: #133e35;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=App.css.map */
