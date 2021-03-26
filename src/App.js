@@ -9,6 +9,10 @@ import { FcLock } from 'react-icons/fc';
 function App() {
   const handleClick = (e) => {
     e.preventDefault();
+    const randomLowerCaseLetter =
+      Math.floor(Math.random() * (122 - 97 + 1)) + 97;
+    const lowerCaseLetter = String.fromCharCode(randomLowerCaseLetter);
+    console.log(lowerCaseLetter);
   };
   return (
     <Layout>
