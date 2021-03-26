@@ -2,6 +2,7 @@ import './App.css';
 
 import Layout from './components/Layout/Index';
 import Input from './components/Input/Index';
+import Button from './components/Button/index';
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <h1>Password Generator</h1>
       <div className="input-container">
         <Input />
-        <button>Generate</button>
+        <Button />
       </div>
     </Layout>
   );
