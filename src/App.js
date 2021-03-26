@@ -8,6 +8,7 @@ function App() {
   return (
     <Layout>
       <h1>Password Generator</h1>
+      <p> Generate a secure password to use on your daily basics!</p>
       <div className="input-container">
         <Input />
         <Button />

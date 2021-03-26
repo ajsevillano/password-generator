@@ -29,11 +29,17 @@ body {
   align-items: left;
   margin-left: 40px;
 }
+.main-contain p {
+  color: #5c5c5c;
+}
 
 .input-container {
   display: flex;
 }
 
+.input-container {
+  margin-top: 20px;
+}
 .input-container input {
   width: 50%;
   margin-right: 20px;
@@ -56,6 +62,9 @@ body {
   border: none;
   border-bottom: 4px solid #dd2345;
   outline: none;
+}
+.button:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=App.css.map */
