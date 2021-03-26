@@ -7,6 +7,9 @@ import Button from './components/Button/index';
 import { FcLock } from 'react-icons/fc';
 
 function App() {
+  const handleClick = (e) => {
+    e.preventDefault();
+  };
   return (
     <Layout>
       <h1>Password Generator</h1>
@@ -14,7 +17,7 @@ function App() {
       <div className="input-container">
         <FcLock size={35} className={'lock-icon'} />
         <Input />
-        <Button />
+        <Button handleClick={handleClick} />
       </div>
     </Layout>
   );
