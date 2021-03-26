@@ -1,10 +1,12 @@
 import './App.css';
 
+import Layout from './components/Layout/Index';
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hi</h1>
-    </div>
+    <Layout>
+      <h1>Password Generator</h1>
+    </Layout>
   );
 }
 
