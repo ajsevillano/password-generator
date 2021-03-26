@@ -1,16 +1,4 @@
 @use './components/Layout/Layout';
+@use './components/Input/Input';
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
-
-.input-container input {
-  width: 50%;
-  margin-right: 20px;
-  border: 1px solid #e1e4e8;
-  border-radius: 4px;
-  outline: none;
-  padding: 14px 14px 14px 48px;
-  font-size: 0.9rem;
-  color: #133e35;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-}
