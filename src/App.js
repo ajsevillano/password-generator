@@ -12,7 +12,7 @@ function App() {
       <h1>Password Generator</h1>
       <p> Generate a secure password to use on your daily basics!</p>
       <div className="input-container">
-        <FcLock />
+        <FcLock size={35} className={'lock-icon'} />
         <Input />
         <Button />
       </div>

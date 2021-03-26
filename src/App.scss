@@ -3,3 +3,9 @@
 @use './components/Button/Button';
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+.lock-icon {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}

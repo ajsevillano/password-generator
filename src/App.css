@@ -39,6 +39,7 @@ body {
 
 .input-container {
   margin-top: 20px;
+  position: relative;
 }
 .input-container input {
   width: 50%;
@@ -65,6 +66,12 @@ body {
 }
 .button:hover {
   cursor: pointer;
+}
+
+.lock-icon {
+  position: absolute;
+  top: 15px;
+  left: 10px;
 }
 
 /*# sourceMappingURL=App.css.map */
