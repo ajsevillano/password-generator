@@ -43,7 +43,6 @@ body {
 }
 .input-container input {
   width: 50%;
-  margin-right: 20px;
   border: 1px solid #e1e4e8;
   border-radius: 4px;
   outline: none;
