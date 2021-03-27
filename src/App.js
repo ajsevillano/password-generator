@@ -13,6 +13,32 @@ const App = () => {
   const [password, setPassword] = useState('');
   const [passLength, setPassLength] = useState(20);
   const [isLowerCase, setIsLowerCase] = useState(false);
+  const [checkBoxes, setCheckBoxes] = useState([
+    {
+      id: 0,
+      name: 'uppercase',
+      label: 'Uppercase',
+      isChecked: true,
+    },
+    {
+      id: 1,
+      name: 'lowercase',
+      label: 'Lowercase',
+      isChecked: true,
+    },
+    {
+      id: 2,
+      name: 'symbols',
+      label: 'Symbols',
+      isChecked: true,
+    },
+    {
+      id: 3,
+      name: 'numbers',
+      label: 'Numbers',
+      isChecked: true,
+    },
+  ]);
 
   useEffect(() => {
     setPasswordLength(passLength);

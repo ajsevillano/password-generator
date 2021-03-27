@@ -6,7 +6,6 @@ const setUpperCase = (isUpperCase) => {
 };
 
 const setLowerCase = (islowercase) => {
-  console.log(islowercase);
   islowercase && (characters += 'abcdefghijklmnopqrstuvwxyz');
 };
 
