@@ -3,22 +3,19 @@ let passwordLength = '';
 
 const setUpperCase = (isUpperCase) => {
   isUpperCase && (characters += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
-  return '';
 };
 
 const setLowerCase = (islowercase) => {
+  console.log(islowercase);
   islowercase && (characters += 'abcdefghijklmnopqrstuvwxyz');
-  return '';
 };
 
 const setSymbols = (isSymbol) => {
   isSymbol && (characters += '!@#$%^&*()<>,.?/[]{}-=_+|/');
-  return '';
 };
 
 const setNumber = (isNumeric) => {
   isNumeric && (characters += '0123456789');
-  return '';
 };
 
 const getRandomInteger = (min, max) => {
