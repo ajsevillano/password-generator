@@ -1,7 +1,9 @@
+import { FaSync } from 'react-icons/fa';
+
 const Button = ({ handleClick }) => {
   return (
     <button className="button" onClick={handleClick}>
-      Generate Password
+      <FaSync size={15} /> Generate Password
     </button>
   );
 };

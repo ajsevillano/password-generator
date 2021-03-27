@@ -12,7 +12,7 @@ import { FcLock } from 'react-icons/fc';
 const App = () => {
   const [password, setPassword] = useState('');
   const [passLength, setPassLength] = useState(20);
-  const [isLowerCase, setisLowerCase] = useState(false);
+  const [isLowerCase, setIsLowerCase] = useState(false);
 
   useEffect(() => {
     setPasswordLength(passLength);
@@ -26,7 +26,7 @@ const App = () => {
   }
 
   const handleCheckBox = () => {
-    isLowerCase === true ? setisLowerCase(false) : setisLowerCase(true);
+    isLowerCase === true ? setIsLowerCase(false) : setIsLowerCase(true);
   };
 
   return (
@@ -46,7 +46,7 @@ const App = () => {
           name="lowerCase"
           id="lowerCase"
           onChange={handleCheckBox}
-          isLowerCase={isLowerCase}
+          islowercase={{ isLowerCase }}
         />
         Lowercase
         <input type="checkbox" name="numbers" id="numbers" /> Numbers

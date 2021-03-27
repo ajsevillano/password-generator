@@ -6,8 +6,8 @@ const setUpperCase = (isUpperCase) => {
   return '';
 };
 
-const setLowerCase = (isLowerCase) => {
-  isLowerCase && (characters += 'abcdefghijklmnopqrstuvwxyz');
+const setLowerCase = (islowercase) => {
+  islowercase && (characters += 'abcdefghijklmnopqrstuvwxyz');
   return '';
 };
 
@@ -43,10 +43,10 @@ const passwordCharacters = () => {
   }
 };
 
-export const generatePassword = (isLowerCase) => {
+export const generatePassword = (islowercase) => {
   setPasswordLength(passwordLength);
   setUpperCase(true);
-  setLowerCase(isLowerCase);
+  setLowerCase(islowercase);
   setSymbols(false);
   setNumber(false);
   const password = passwordCharacters();
