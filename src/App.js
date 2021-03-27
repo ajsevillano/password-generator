@@ -12,16 +12,21 @@ import { FcLock } from 'react-icons/fc';
 const App = () => {
   const [password, setPassword] = useState('');
   const [passLength, setPassLength] = useState(10);
+  const [checked, setchecked] = useState(false);
 
   useEffect(() => {
     setPasswordLength(passLength);
     setPassword(generatePassword());
-  }, []);
+  }, [checked]);
 
   function handleClick(e) {
     e.preventDefault();
     setPassword(generatePassword());
   }
+
+  const handleCheckBox = () => {
+    checked === true ? setchecked(false) : setchecked(true);
+  };
 
   return (
     <Layout>
@@ -35,7 +40,14 @@ const App = () => {
       <div className="checkboxes-container">
         <input type="checkbox" name="upperCase" id="upperCase" />
         Uppercase
-        <input type="checkbox" name="lowerCase" id="lowerCase" /> Lowercase
+        <input
+          type="checkbox"
+          name="lowerCase"
+          id="lowerCase"
+          onChange={handleCheckBox}
+          checked={checked}
+        />
+        Lowercase
         <input type="checkbox" name="numbers" id="numbers" /> Numbers
         <input type="checkbox" name="symbols" id="symbols" /> Symbols
       </div>
