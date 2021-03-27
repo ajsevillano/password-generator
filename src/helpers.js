@@ -1,5 +1,5 @@
 let characters = '';
-let passwordLength = 20;
+let passwordLength = '';
 
 const setUpperCase = (isUpperCase) => {
   isUpperCase
