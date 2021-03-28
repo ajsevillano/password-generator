@@ -68,6 +68,13 @@ const App = () => {
       <div className="checkboxes-container">
         <input type="checkbox" name="upperCase" id="upperCase" />
         Uppercase
+        <CheckBox
+          type="checkbox"
+          id="lowerCase"
+          onChange={handleCheckBox}
+          islowercase={{ isLowerCase }}
+          label="Lowercase"
+        />
         <input type="checkbox" name="numbers" id="numbers" /> Numbers
         <input type="checkbox" name="symbols" id="symbols" /> Symbols
       </div>
