@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Layout from './components/Layout/Index';
 import Input from './components/Input/Index';
 import Button from './components/Button/index';
+import CheckBox from './components/Checkbox/Index';
 
 import { generatePassword, setPasswordLength } from './helpers';
 
@@ -67,14 +68,6 @@ const App = () => {
       <div className="checkboxes-container">
         <input type="checkbox" name="upperCase" id="upperCase" />
         Uppercase
-        <input
-          type="checkbox"
-          name="lowerCase"
-          id="lowerCase"
-          onChange={handleCheckBox}
-          islowercase={{ isLowerCase }}
-        />
-        Lowercase
         <input type="checkbox" name="numbers" id="numbers" /> Numbers
         <input type="checkbox" name="symbols" id="symbols" /> Symbols
       </div>
