@@ -19,7 +19,7 @@ const App = () => {
       id: 0,
       name: 'uppercase',
       label: 'Uppercase',
-      isChecked: true,
+      isChecked: false,
     },
     {
       id: 1,
@@ -31,13 +31,13 @@ const App = () => {
       id: 2,
       name: 'symbols',
       label: 'Symbols',
-      isChecked: true,
+      isChecked: false,
     },
     {
       id: 3,
       name: 'numbers',
       label: 'Numbers',
-      isChecked: true,
+      isChecked: false,
     },
   ]);
 
@@ -52,8 +52,16 @@ const App = () => {
     setPassword(generatePassword(isLowerCase));
   }
 
-  const handleCheckBox = () => {
-    isLowerCase === true ? setIsLowerCase(false) : setIsLowerCase(true);
+  const handleCheckBox = (e) => {
+    setCheckBoxes(
+      checkBoxes.map((eachCheckBox) => {
+        if (eachCheckBox.name == e.target.name) {
+          return { ...eachCheckBox, isChecked: e.target.checked };
+        } else {
+          return eachCheckBox;
+        }
+      })
+    );
   };
 
   return (
@@ -66,17 +74,20 @@ const App = () => {
         <Button handleClick={handleClick} />
       </div>
       <div className="checkboxes-container">
-        <input type="checkbox" name="upperCase" id="upperCase" />
-        Uppercase
-        <CheckBox
-          type="checkbox"
-          id="lowerCase"
-          onChange={handleCheckBox}
-          islowercase={{ isLowerCase }}
-          label="Lowercase"
-        />
-        <input type="checkbox" name="numbers" id="numbers" /> Numbers
-        <input type="checkbox" name="symbols" id="symbols" /> Symbols
+        {checkBoxes.map((eachCheckBox) => (
+          <CheckBox
+            key={eachCheckBox.id}
+            name={eachCheckBox.name}
+            label={eachCheckBox.label}
+            isChecked={eachCheckBox.isChecked}
+            onChange={handleCheckBox}
+          />
+        ))}
+        {/* <input type="checkbox" name="upperCase" id="upperCase" />
+        Uppercase */}
+
+        {/* <input type="checkbox" name="numbers" id="numbers" /> Numbers
+        <input type="checkbox" name="symbols" id="symbols" /> Symbols */}
       </div>
     </Layout>
   );

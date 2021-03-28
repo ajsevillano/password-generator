@@ -1,12 +1,13 @@
-const Checkbox = ({ type, name, id, onChange, isLowerCase, label }) => {
+const Checkbox = ({ name, id, onChange, isLowerCase, label, isChecked }) => {
   return (
     <>
       <input
-        type={type}
-        name={name}
         id={id}
+        type="checkbox"
+        checked={isChecked}
+        name={name}
         onChange={onChange}
-        islowercase={{ isLowerCase }}
+        // islowercase={{ isLowerCase }}
       />
       <span>{label}</span>
     </>
