@@ -40,44 +40,44 @@ const App = () => {
     },
   ]);
 
-  const [checkbox, setCheckBox] = useState({
+  const [filters, setFilters] = useState({
     uppercase: true,
     lowercase: true,
     symbols: true,
     numbers: true,
   });
 
-  const { uppercase, lowercase, symbols, numbers } = checkbox;
+  const { uppercase, lowercase, symbols, numbers } = filters;
 
   useEffect(() => {
     setPasswordLength(passLength);
     setPassword(generatePassword(uppercase, lowercase, symbols, numbers));
   }, [checkBoxes]);
 
-  //Generate Pass Button
+  //Generate Password Button
   function handleClick(e) {
     e.preventDefault();
     setPasswordLength(passLength);
     setPassword(generatePassword(uppercase, lowercase, symbols, numbers));
   }
 
-  //Checkboxes
+  //Checkboxes Handler
   const handleCheckBox = (e) => {
-    setCheckBoxes(
-      checkBoxes.map((eachCheckBox) => {
-        if (eachCheckBox.name === e.target.name) {
-          return { ...eachCheckBox, isChecked: e.target.checked };
-        } else {
-          return eachCheckBox;
-        }
-      })
-    );
-    const theName = {
-      ...checkbox,
+    const updateCheckBox = checkBoxes.map((eachCheckBox) => {
+      return eachCheckBox.name === e.target.name
+        ? { ...eachCheckBox, isChecked: e.target.checked }
+        : eachCheckBox;
+    });
+
+    const setFilterValues = {
+      ...filters,
       [e.target.name]: e.target.checked,
     };
-    setCheckBox(theName);
+
+    setCheckBoxes(updateCheckBox);
+    setFilters(setFilterValues);
   };
+
   return (
     <Layout>
       <h1>Password Generator</h1>
@@ -97,11 +97,6 @@ const App = () => {
             onChange={handleCheckBox}
           />
         ))}
-        {/* <input type="checkbox" name="upperCase" id="upperCase" />
-        Uppercase */}
-
-        {/* <input type="checkbox" name="numbers" id="numbers" /> Numbers
-        <input type="checkbox" name="symbols" id="symbols" /> Symbols */}
       </div>
     </Layout>
   );
