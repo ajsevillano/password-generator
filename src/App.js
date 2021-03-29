@@ -12,7 +12,8 @@ import { generatePassword, setPasswordLength } from './helpers';
 import { FcLock } from 'react-icons/fc';
 
 const App = () => {
-  const inputEl = useRef(null);
+  const inputEl = useRef('');
+  console.log(inputEl.current.innerText);
 
   const [password, setPassword] = useState('');
   const [passLength, setPassLength] = useState(14);
@@ -92,7 +93,7 @@ const App = () => {
     return !navigator.clipboard
       ? (inputEl.current.select(), document.execCommand('copy'))
       : //Otherwhise
-        navigator.clipboard.writeText(inputEl.current.value);
+        navigator.clipboard.writeText(inputEl.current.innerText);
   };
 
   return (
@@ -101,7 +102,10 @@ const App = () => {
       <p> Generate a secure password to use on your daily basics!</p>
       <div className="input-container">
         <FcLock size={35} className={'lock-icon'} />
-        <Input Theref={inputEl} value={password} />
+        <div ref={inputEl} className="password">
+          {password}
+        </div>
+        <Input />
         <Button copyToClipBoard={copyToClipBoard} />
       </div>
       <div className="checkboxes-container">

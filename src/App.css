@@ -28,6 +28,7 @@ body {
   justify-content: center;
   align-items: left;
   margin-left: 40px;
+  margin-right: 40px;
 }
 .main-contain p {
   color: #5c5c5c;
@@ -43,7 +44,7 @@ body {
   position: relative;
 }
 .input-container input {
-  width: 50%;
+  width: 70%;
   border: 1px solid #e1e4e8;
   border-radius: 4px;
   border-top-right-radius: 0px;
@@ -79,6 +80,18 @@ body {
   position: absolute;
   top: 15px;
   left: 10px;
+}
+
+.password {
+  position: absolute;
+  top: 13px;
+  left: 50px;
+  width: 70%;
+  overflow: hidden;
+  font-size: 2rem;
+  color: #0b2138;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
 }
 
 .slider-container {

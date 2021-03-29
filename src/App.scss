@@ -10,6 +10,18 @@
   left: 10px;
 }
 
+.password {
+  position: absolute;
+  top: 13px;
+  left: 50px;
+  width: 70%;
+  overflow: hidden;
+  font-size: 2rem;
+  color: #0b2138;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
 .slider-container {
   display: flex;
 }
