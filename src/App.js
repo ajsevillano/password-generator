@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import Layout from './components/Layout/Index';
 import Input from './components/Input/Index';
@@ -12,8 +12,10 @@ import { generatePassword, setPasswordLength } from './helpers';
 import { FcLock } from 'react-icons/fc';
 
 const App = () => {
+  const inputEl = useRef(null);
+
   const [password, setPassword] = useState('');
-  const [passLength, setPassLength] = useState(10);
+  const [passLength, setPassLength] = useState(14);
   const [checkBoxes, setCheckBoxes] = useState([
     {
       id: 0,
@@ -84,14 +86,23 @@ const App = () => {
     setPassLength(e.target.value);
   };
 
+  //Copy to Clipboard
+  const copyToClipBoard = () => {
+    // Execute deprecated execCommand if browser doesn't allow clipboard Api.
+    return !navigator.clipboard
+      ? (inputEl.current.select(), document.execCommand('copy'))
+      : //Otherwhise
+        navigator.clipboard.writeText(inputEl.current.value);
+  };
+
   return (
     <Layout>
       <h1>Password Generator</h1>
       <p> Generate a secure password to use on your daily basics!</p>
       <div className="input-container">
         <FcLock size={35} className={'lock-icon'} />
-        <Input value={password} />
-        <Button handleClick={handleClick} />
+        <Input Theref={inputEl} value={password} />
+        <Button copyToClipBoard={copyToClipBoard} />
       </div>
       <div className="checkboxes-container">
         {checkBoxes.map((eachCheckBox) => (

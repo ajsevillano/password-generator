@@ -1,5 +1,5 @@
-const Input = ({ value }) => {
-  return <input type="text" defaultValue={value} />;
+const Input = ({ value, Theref }) => {
+  return <input type="text" ref={Theref} defaultValue={value} />;
 };
 
 export default Input;
