@@ -40,7 +40,6 @@ const passwordCharacters = () => {
 };
 
 export const generatePassword = (uppercase, lowercase, symbols, numbers) => {
-  console.log(uppercase, lowercase, symbols, numbers);
   setPasswordLength(passwordLength);
   setUpperCase(uppercase);
   setLowerCase(lowercase);

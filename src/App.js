@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import Layout from './components/Layout/Index';
 import Input from './components/Input/Index';
@@ -12,6 +12,7 @@ import { generatePassword, setPasswordLength } from './helpers';
 import { FcLock } from 'react-icons/fc';
 
 const App = () => {
+  const inputEl = useRef('');
   const [password, setPassword] = useState('');
   const [passLength, setPassLength] = useState(20);
   const [checkBoxes, setCheckBoxes] = useState([
@@ -78,6 +79,11 @@ const App = () => {
     setCheckBoxes(updateCheckBox);
     setFilters(setFilterValues);
   };
+  console.log(inputEl.current.value);
+  //Slider Handler
+  const handleSlider = (e) => {
+    console.log(e.target.value);
+  };
 
   return (
     <Layout>
@@ -100,7 +106,8 @@ const App = () => {
         ))}
       </div>
       <div className="slider-container">
-        <Slider />
+        <p>Password Length: {passLength}</p>
+        <Slider handleslider={handleSlider} refI={inputEl} value={passLength} />
       </div>
     </Layout>
   );

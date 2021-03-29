@@ -73,4 +73,8 @@ body {
   left: 10px;
 }
 
+.slider-container {
+  display: flex;
+}
+
 /*# sourceMappingURL=App.css.map */
