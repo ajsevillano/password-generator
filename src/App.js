@@ -5,6 +5,7 @@ import Layout from './components/Layout/Index';
 import Input from './components/Input/Index';
 import Button from './components/Button/index';
 import CheckBox from './components/Checkbox/Index';
+import Slider from './components/Range-Slider/index';
 
 import { generatePassword, setPasswordLength } from './helpers';
 
@@ -97,6 +98,9 @@ const App = () => {
             onChange={handleCheckBox}
           />
         ))}
+      </div>
+      <div className="slider-container">
+        <Slider />
       </div>
     </Layout>
   );
