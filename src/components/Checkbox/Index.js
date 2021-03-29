@@ -1,4 +1,4 @@
-const Checkbox = ({ name, id, onChange, isLowerCase, label, isChecked }) => {
+const Checkbox = ({ name, id, onChange, label, isChecked }) => {
   return (
     <>
       <input
@@ -7,7 +7,6 @@ const Checkbox = ({ name, id, onChange, isLowerCase, label, isChecked }) => {
         checked={isChecked}
         name={name}
         onChange={onChange}
-        // islowercase={{ isLowerCase }}
       />
       <span>{label}</span>
     </>

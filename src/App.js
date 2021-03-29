@@ -13,13 +13,12 @@ import { FcLock } from 'react-icons/fc';
 const App = () => {
   const [password, setPassword] = useState('');
   const [passLength, setPassLength] = useState(20);
-  const [isLowerCase, setIsLowerCase] = useState(false);
   const [checkBoxes, setCheckBoxes] = useState([
     {
       id: 0,
       name: 'uppercase',
       label: 'Uppercase',
-      isChecked: false,
+      isChecked: true,
     },
     {
       id: 1,
@@ -31,39 +30,54 @@ const App = () => {
       id: 2,
       name: 'symbols',
       label: 'Symbols',
-      isChecked: false,
+      isChecked: true,
     },
     {
       id: 3,
       name: 'numbers',
       label: 'Numbers',
-      isChecked: false,
+      isChecked: true,
     },
   ]);
 
+  const [checkbox, setCheckBox] = useState({
+    uppercase: true,
+    lowercase: true,
+    symbols: true,
+    numbers: true,
+  });
+
+  const { uppercase, lowercase, symbols, numbers } = checkbox;
+
   useEffect(() => {
     setPasswordLength(passLength);
-    setPassword(generatePassword(isLowerCase));
-  }, [isLowerCase]);
+    setPassword(generatePassword(uppercase, lowercase, symbols, numbers));
+  }, [checkBoxes]);
 
+  //Generate Pass Button
   function handleClick(e) {
     e.preventDefault();
     setPasswordLength(passLength);
-    setPassword(generatePassword(isLowerCase));
+    setPassword(generatePassword(uppercase, lowercase, symbols, numbers));
   }
 
+  //Checkboxes
   const handleCheckBox = (e) => {
     setCheckBoxes(
       checkBoxes.map((eachCheckBox) => {
-        if (eachCheckBox.name == e.target.name) {
+        if (eachCheckBox.name === e.target.name) {
           return { ...eachCheckBox, isChecked: e.target.checked };
         } else {
           return eachCheckBox;
         }
       })
     );
+    const theName = {
+      ...checkbox,
+      [e.target.name]: e.target.checked,
+    };
+    setCheckBox(theName);
   };
-
   return (
     <Layout>
       <h1>Password Generator</h1>

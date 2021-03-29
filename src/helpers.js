@@ -39,12 +39,13 @@ const passwordCharacters = () => {
   }
 };
 
-export const generatePassword = (islowercase) => {
+export const generatePassword = (uppercase, lowercase, symbols, numbers) => {
+  console.log(uppercase, lowercase, symbols, numbers);
   setPasswordLength(passwordLength);
-  setUpperCase(true);
-  setLowerCase(islowercase);
-  setSymbols(false);
-  setNumber(false);
+  setUpperCase(uppercase);
+  setLowerCase(lowercase);
+  setSymbols(symbols);
+  setNumber(numbers);
   const password = passwordCharacters();
   return password;
 };
