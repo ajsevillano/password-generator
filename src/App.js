@@ -101,7 +101,7 @@ const App = () => {
     return !navigator.clipboard
       ? (inputEl.current.select(), document.execCommand('copy'))
       : //Otherwhise
-        navigator.clipboard.writeText(inputEl.current.innerText);
+        navigator.clipboard.writeText(inputEl.current.value);
   };
 
   return (
@@ -114,10 +114,7 @@ const App = () => {
           <FaSync size={30} className={!loading ? '' : 'sync-animation'} />
         </div>
 
-        <div ref={inputEl} className="password">
-          {password}
-        </div>
-        <Input />
+        <Input inputRef={inputEl} value={password} />
         <Button copyToClipBoard={copyToClipBoard} />
       </div>
       <div className="checkboxes-container">
