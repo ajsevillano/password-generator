@@ -8,7 +8,7 @@ const Checkbox = ({ name, id, onChange, label, isChecked }) => {
         name={name}
         onChange={onChange}
       />
-      <span>{label}</span>
+      <label for={label}>{label}</label>
     </div>
   );
 };
