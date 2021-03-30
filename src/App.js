@@ -97,10 +97,10 @@ const App = () => {
 
   //Copy to Clipboard
   const copyToClipBoard = () => {
-    // Execute deprecated execCommand if browser doesn't allow clipboard Api.
     return !navigator.clipboard
-      ? (inputEl.current.select(), document.execCommand('copy'))
-      : //Otherwhise
+      ? // Execute deprecated execCommand if browser doesn't allow clipboard Api.
+        (inputEl.current.select(), document.execCommand('copy'))
+      : // Otherwhise
         navigator.clipboard.writeText(inputEl.current.value);
   };
 

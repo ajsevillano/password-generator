@@ -15,4 +15,11 @@
   &:hover {
     cursor: pointer;
   }
+  &:active {
+    background-color: #fc4c6c;
+    outline: none;
+
+    position: relative;
+    border-bottom: 0px;
+  }
 }
