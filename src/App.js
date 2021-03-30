@@ -16,6 +16,7 @@ const App = () => {
   const inputEl = useRef('');
 
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
   const [passLength, setPassLength] = useState(14);
   const [checkBoxes, setCheckBoxes] = useState([
     {
@@ -61,8 +62,15 @@ const App = () => {
   //Generate Password Button
   function handleClick(e) {
     e.preventDefault();
-    setPasswordLength(passLength);
-    setPassword(generatePassword(uppercase, lowercase, symbols, numbers));
+    setLoading(true);
+    setTimeout(() => {
+      setPasswordLength(passLength);
+      setPassword(generatePassword(uppercase, lowercase, symbols, numbers));
+    }, 200);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 300);
   }
 
   //Checkboxes Handler
@@ -103,7 +111,7 @@ const App = () => {
       <div className="input-container">
         <FcLock size={35} className={'lock-icon'} />
         <div className="sync-container" onClick={handleClick}>
-          <FaSync size={35} className={'sync-icon'} />
+          <FaSync size={30} className={!loading ? '' : 'sync-animation'} />
         </div>
 
         <div ref={inputEl} className="password">

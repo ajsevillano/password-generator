@@ -13,12 +13,22 @@
 .sync-container {
   position: absolute;
   right: 130px;
-  top: 15px;
-  color: #8f8f8f;
+  top: 20px;
+  color: #cccccc;
   cursor: pointer;
 }
 
-.sync-icon {
+.sync-animation {
+  animation: spin infinite 0.4s linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .password {
