@@ -10,6 +10,17 @@
   left: 10px;
 }
 
+.sync-container {
+  position: absolute;
+  right: 130px;
+  top: 15px;
+  color: #8f8f8f;
+  cursor: pointer;
+}
+
+.sync-icon {
+}
+
 .password {
   position: absolute;
   top: 13px;
@@ -24,4 +35,10 @@
 
 .slider-container {
   display: flex;
+}
+
+.checkboxes-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }

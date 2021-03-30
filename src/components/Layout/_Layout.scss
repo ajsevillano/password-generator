@@ -23,13 +23,12 @@ body {
 }
 
 .main-contain {
-  width: 70%;
+  width: 50%;
   flex-direction: column;
   display: flex;
   justify-content: center;
-  align-items: left;
   margin-left: 40px;
-  margin-right: 40px;
+  margin-right: auto;
 
   p {
     color: #5c5c5c;

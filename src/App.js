@@ -10,10 +10,10 @@ import Slider from './components/Range-Slider/index';
 import { generatePassword, setPasswordLength } from './helpers';
 
 import { FcLock } from 'react-icons/fc';
+import { FaSync } from 'react-icons/fa';
 
 const App = () => {
   const inputEl = useRef('');
-  console.log(inputEl.current.innerText);
 
   const [password, setPassword] = useState('');
   const [passLength, setPassLength] = useState(14);
@@ -102,6 +102,10 @@ const App = () => {
       <p> Generate a secure password to use on your daily basics!</p>
       <div className="input-container">
         <FcLock size={35} className={'lock-icon'} />
+        <div className="sync-container" onClick={handleClick}>
+          <FaSync size={35} className={'sync-icon'} />
+        </div>
+
         <div ref={inputEl} className="password">
           {password}
         </div>
