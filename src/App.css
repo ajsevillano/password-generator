@@ -22,7 +22,7 @@ body {
 }
 
 .main-contain {
-  width: 50%;
+  width: 770px;
   flex-direction: column;
   display: flex;
   justify-content: center;
