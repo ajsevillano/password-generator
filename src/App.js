@@ -58,7 +58,7 @@ const App = () => {
   useEffect(() => {
     setPasswordLength(passLength);
     setPassword(generatePassword(uppercase, lowercase, symbols, numbers));
-  }, [checkBoxes, passLength]);
+  }, [checkBoxes, passLength, uppercase, lowercase, symbols, numbers]);
 
   //Generate Password Button
   function handleClick(e) {
