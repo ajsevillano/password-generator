@@ -126,6 +126,7 @@ const App = () => {
             label={eachCheckBox.label}
             isChecked={eachCheckBox.isChecked}
             onChange={handleCheckBox}
+            filters={filters}
           />
         ))}
       </div>
