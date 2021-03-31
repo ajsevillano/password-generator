@@ -18,7 +18,7 @@ const App = () => {
 
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const [passLength, setPassLength] = useState(12);
+  const [passLength, setPassLength] = useState(13);
   const [checkBoxes, setCheckBoxes] = useState([
     {
       id: 0,
@@ -119,6 +119,11 @@ const App = () => {
         <Button copyToClipBoard={copyToClipBoard} />
       </div>
       <div className="checkboxes-container">
+        <svg className="inline-svg">
+          <symbol id="check" viewBox="0 0 12 10">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+          </symbol>
+        </svg>
         {checkBoxes.map((eachCheckBox) => (
           <CheckBox
             key={eachCheckBox.id}

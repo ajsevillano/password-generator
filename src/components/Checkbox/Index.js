@@ -8,8 +8,9 @@ const Checkbox = ({ name, onChange, label, isChecked, filters }) => {
   };
 
   return (
-    <div className="input-group">
+    <>
       <input
+        className="input-checkbox"
         id={name}
         type="checkbox"
         checked={isChecked}
@@ -17,8 +18,16 @@ const Checkbox = ({ name, onChange, label, isChecked, filters }) => {
         onChange={onChange}
         disabled={handleDisabled()}
       />
-      <label htmlFor={name}>{label}</label>
-    </div>
+
+      <label className="label-input-checkbox" htmlFor={name}>
+        <span>
+          <svg width="12px" height="10px">
+            <use href="#check"></use>
+          </svg>
+        </span>
+        <span>{label}</span>
+      </label>
+    </>
   );
 };
 
