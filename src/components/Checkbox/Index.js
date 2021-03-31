@@ -2,13 +2,13 @@ const Checkbox = ({ name, id, onChange, label, isChecked }) => {
   return (
     <div className="input-group">
       <input
-        id={id}
+        id={name}
         type="checkbox"
         checked={isChecked}
         name={name}
         onChange={onChange}
       />
-      <label for={label}>{label}</label>
+      <label htmlFor={name}>{label}</label>
     </div>
   );
 };
