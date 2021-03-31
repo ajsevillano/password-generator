@@ -18,7 +18,7 @@ const App = () => {
 
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const [passLength, setPassLength] = useState(14);
+  const [passLength, setPassLength] = useState(12);
   const [checkBoxes, setCheckBoxes] = useState([
     {
       id: 0,
@@ -114,7 +114,7 @@ const App = () => {
         <div className="sync-container" onClick={handleClick}>
           <FaSync size={30} className={!loading ? '' : 'sync-animation'} />
         </div>
-        <SecureBar />
+        <SecureBar passLength={passLength} />
         <Input inputRef={inputEl} value={password} />
         <Button copyToClipBoard={copyToClipBoard} />
       </div>

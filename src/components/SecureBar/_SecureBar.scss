@@ -1,8 +1,43 @@
 .secure-bar {
   position: absolute;
   bottom: 0;
-  width: 86%;
-  background-color: #2ecc71;
   min-height: 8px;
   line-height: 8px;
+  -webkit-transition: width 0.3s ease-in-out;
+  -moz-transition: width 0.3s ease-in-out;
+  -o-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+
+.very-weak-password,
+.weak-password {
+  background-color: #e74c3c;
+}
+
+.medium-password {
+  background-color: #f39c12;
+  width: 51.6%;
+}
+
+.strong-password,
+.very-strong-password {
+  background-color: #2ecc71;
+}
+
+//Size
+
+.very-weak-password {
+  width: 17.2%;
+}
+
+.weak-password {
+  width: 34.4%;
+}
+
+.strong-password {
+  width: 68.8%;
+}
+
+.very-strong-password {
+  width: 86%;
 }
