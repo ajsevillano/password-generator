@@ -6,6 +6,7 @@ import Input from './components/Input/Index';
 import Button from './components/Button/index';
 import CheckBox from './components/Checkbox/Index';
 import Slider from './components/Range-Slider/index';
+import SecureBar from './components/SecureBar/Index';
 
 import { generatePassword, setPasswordLength } from './helpers';
 
@@ -113,7 +114,7 @@ const App = () => {
         <div className="sync-container" onClick={handleClick}>
           <FaSync size={30} className={!loading ? '' : 'sync-animation'} />
         </div>
-
+        <SecureBar />
         <Input inputRef={inputEl} value={password} />
         <Button copyToClipBoard={copyToClipBoard} />
       </div>
