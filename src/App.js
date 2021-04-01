@@ -61,7 +61,7 @@ const App = () => {
   }, [checkBoxes, passLength, uppercase, lowercase, symbols, numbers]);
 
   //Generate Password Button
-  function handleClick(e) {
+  const handleClick = (e) => {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
@@ -72,7 +72,7 @@ const App = () => {
     setTimeout(() => {
       setLoading(false);
     }, 300);
-  }
+  };
 
   //Checkboxes Handler
   const handleCheckBox = (e) => {
