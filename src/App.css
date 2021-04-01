@@ -37,6 +37,20 @@ body {
   display: flex;
 }
 
+@media screen and (max-width: 768px) {
+  .side {
+    display: none;
+  }
+
+  .main-contain {
+    width: 80%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 .input-container {
   margin-top: 20px;
   margin-bottom: 20px;

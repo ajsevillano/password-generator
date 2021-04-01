@@ -18,7 +18,6 @@ body {
 
 .side {
   background-color: #ff4163;
-
   width: 30%;
 }
 
@@ -37,4 +36,19 @@ body {
 
 .input-container {
   display: flex;
+}
+
+//Mobile styles
+@media screen and (max-width: 768px) {
+  .side {
+    display: none;
+  }
+  .main-contain {
+    width: 80%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
