@@ -88,14 +88,12 @@ const App = () => {
     };
 
     setLoading(true);
-    setTimeout(() => {
-      setCheckBoxes(updateCheckBox);
-      setFilters(setFilterValues);
-    }, 150);
+    setCheckBoxes(updateCheckBox);
+    setFilters(setFilterValues);
 
     setTimeout(() => {
       setLoading(false);
-    }, 250);
+    }, 450);
   };
 
   //Slider Handler
@@ -125,6 +123,12 @@ const App = () => {
         <Input inputRef={inputEl} value={password} />
         <Button copyToClipBoard={copyToClipBoard} />
       </div>
+      <p className="slider-p">
+        Password Length:<span> {passLength} </span>
+      </p>
+      <div className="slider-container">
+        <Slider handleslider={handleSlider} passLength={passLength} />
+      </div>
       <div className="checkboxes-container">
         <svg className="inline-svg">
           <symbol id="check" viewBox="0 0 12 10">
@@ -142,10 +146,6 @@ const App = () => {
           />
         ))}
       </div>
-      <div className="slider-container">
-        <Slider handleslider={handleSlider} passLength={passLength} />
-      </div>
-      <p className="slider-p">Password Length: {passLength}</p>
     </Layout>
   );
 };
