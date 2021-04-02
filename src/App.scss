@@ -26,10 +26,9 @@
 }
 
 .slider-p {
-  margin-bottom: 14px;
-  font-size: 16px;
+  font-size: 18px;
   span {
-    color: #ff4163;
+    color: #333333;
     font-weight: 600;
   }
 }
@@ -49,8 +48,15 @@
   margin-bottom: 20px;
 }
 
-.slider-container {
+.mega-container {
   display: flex;
   position: relative;
   margin-bottom: 40px;
+  width: 70%;
+}
+
+.slider-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }

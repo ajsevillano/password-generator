@@ -18,7 +18,7 @@ const App = () => {
 
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const [passLength, setPassLength] = useState(13);
+  const [passLength, setPassLength] = useState(16);
   const [checkBoxes, setCheckBoxes] = useState([
     {
       id: 0,
@@ -123,11 +123,14 @@ const App = () => {
         <Input inputRef={inputEl} value={password} />
         <Button copyToClipBoard={copyToClipBoard} />
       </div>
-      <p className="slider-p">
-        Password Length:<span> {passLength} </span>
-      </p>
+
       <div className="slider-container">
-        <Slider handleslider={handleSlider} passLength={passLength} />
+        <p className="slider-p">
+          Password Length:<span> {passLength} </span>
+        </p>
+        <div className="mega-container">
+          <Slider handleslider={handleSlider} passLength={passLength} />
+        </div>
       </div>
       <div className="checkboxes-container">
         <svg className="inline-svg">

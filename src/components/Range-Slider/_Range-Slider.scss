@@ -76,6 +76,7 @@ input[type='range']::-ms-thumb {
 //I created a custom div to replace the Track and Progress bar
 .track-bar {
   position: absolute;
+  border-radius: 10px;
   z-index: 1;
   left: 0;
   top: 5px;
