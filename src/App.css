@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 * {
   margin: 0;
@@ -85,6 +86,7 @@ body {
   border: none;
   border-bottom: 4px solid #dd2345;
   outline: none;
+  position: relative;
 }
 .button span {
   margin-left: 10px;
@@ -99,6 +101,26 @@ body {
   border-bottom: 0px;
 }
 
+.copied-animation::after {
+  display: inline;
+  color: white;
+  position: absolute;
+  left: 15px;
+  width: 90px;
+  content: "🎉 Copied!";
+  animation: 1s ease-in-out 0s 1 normal forwards running copyit;
+}
+
+@keyframes copyit {
+  0% {
+    bottom: 2.4em;
+    opacity: 1;
+  }
+  100% {
+    bottom: 3.4em;
+    opacity: 0;
+  }
+}
 .label-input-checkbox {
   -webkit-user-select: none;
   user-select: none;

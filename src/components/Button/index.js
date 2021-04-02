@@ -1,8 +1,9 @@
 import { FaCopy } from 'react-icons/fa';
 
-const Button = ({ copyToClipBoard }) => {
+const Button = ({ copyToClipBoard, passwordCopied }) => {
+  const animation = passwordCopied ? 'copied-animation' : '';
   return (
-    <button className="button" onClick={copyToClipBoard}>
+    <button className={`button ${animation}`} onClick={copyToClipBoard}>
       <FaCopy size={22} /> <span>Copy</span>
     </button>
   );

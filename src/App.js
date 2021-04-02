@@ -16,6 +16,7 @@ import { FaSync } from 'react-icons/fa';
 const App = () => {
   const inputEl = useRef('');
 
+  const [passwordCopied, setpasswordCopied] = useState(false);
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [passLength, setPassLength] = useState(16);
@@ -101,13 +102,21 @@ const App = () => {
     setPassLength(e.target.value);
   };
 
-  //Copy to Clipboard
+  //Copy to Clipboard Button
   const copyToClipBoard = () => {
-    return !navigator.clipboard
-      ? // Execute deprecated execCommand if browser doesn't allow clipboard Api.
-        (inputEl.current.select(), document.execCommand('copy'))
-      : // Otherwhise
-        navigator.clipboard.writeText(inputEl.current.value);
+    return (
+      !navigator.clipboard
+        ? // Execute deprecated execCommand if browser doesn't allow clipboard Api.
+          (inputEl.current.select(),
+          document.execCommand('copy'),
+          setpasswordCopied(true))
+        : // Otherwhise
+          navigator.clipboard.writeText(inputEl.current.value),
+      setpasswordCopied(true),
+      setTimeout(() => {
+        setpasswordCopied(false);
+      }, 1000)
+    );
   };
 
   return (
@@ -121,7 +130,10 @@ const App = () => {
         </div>
         <SecureBar passLength={passLength} />
         <Input inputRef={inputEl} value={password} />
-        <Button copyToClipBoard={copyToClipBoard} />
+        <Button
+          copyToClipBoard={copyToClipBoard}
+          passwordCopied={passwordCopied}
+        />
       </div>
 
       <div className="slider-container">
