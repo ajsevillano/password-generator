@@ -87,8 +87,15 @@ const App = () => {
       [e.target.name]: e.target.checked,
     };
 
-    setCheckBoxes(updateCheckBox);
-    setFilters(setFilterValues);
+    setLoading(true);
+    setTimeout(() => {
+      setCheckBoxes(updateCheckBox);
+      setFilters(setFilterValues);
+    }, 150);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 250);
   };
 
   //Slider Handler
