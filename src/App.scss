@@ -38,32 +38,15 @@
   }
 }
 
-.slider-container {
-  display: flex;
-  position: relative;
-  .bar {
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    top: 5px;
-    width: 99%;
-
-    height: 10px;
-    background-color: #e6e6e6;
-    overflow: hidden;
-    .fill {
-      display: block;
-      height: 100%;
-
-      background-color: #ff4163;
-    }
-  }
-}
-
 .checkboxes-container {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+}
+
+.slider-container {
+  display: flex;
+  position: relative;
 }
 
 ///New checkbox
