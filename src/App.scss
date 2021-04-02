@@ -25,6 +25,10 @@
   animation: spin infinite 0.4s linear;
 }
 
+.slider-p {
+  width: 220px;
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -36,6 +40,22 @@
 
 .slider-container {
   display: flex;
+  position: relative;
+  .bar {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 5px;
+    width: 100%;
+    height: 10px;
+    background-color: #e6e6e6;
+    overflow: hidden;
+    .fill {
+      display: block;
+      height: 100%;
+      background-color: #ff4163;
+    }
+  }
 }
 
 .checkboxes-container {

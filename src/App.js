@@ -136,9 +136,12 @@ const App = () => {
         ))}
       </div>
       <div className="slider-container">
-        <p>Password Length: {passLength}</p>
+        <span className="bar">
+          <span className="fill" style={{ width: `${passLength}%` }}></span>
+        </span>
         <Slider handleslider={handleSlider} passlength={passLength} />
       </div>
+      <p className="slider-p">Password Length: {passLength}</p>
     </Layout>
   );
 };
