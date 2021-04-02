@@ -105,6 +105,8 @@ const App = () => {
         navigator.clipboard.writeText(inputEl.current.value);
   };
 
+  console.log(((passLength - 1) * 100) / 29);
+
   return (
     <Layout>
       <h1>Password Generator</h1>
@@ -137,7 +139,12 @@ const App = () => {
       </div>
       <div className="slider-container">
         <span className="bar">
-          <span className="fill" style={{ width: `${passLength}%` }}></span>
+          <span
+            className="fill"
+            style={{
+              width: `${(passLength * 100) / 30}%`,
+            }}
+          ></span>
         </span>
         <Slider handleslider={handleSlider} passlength={passLength} />
       </div>
