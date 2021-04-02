@@ -318,16 +318,15 @@ input[type=range]::-ms-fill-lower {
 }
 
 input[type=range]::-webkit-slider-thumb {
-  border: 6px solid #eeeeee;
-  height: 24px;
-  width: 24px;
+  border: 9px solid #eeeeee;
+  height: 34px;
+  width: 34px;
   border-radius: 100px;
   background: #ff4163;
-  margin-left: 10px;
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
-  transform: translateY(20%);
+  transform: translate(-2%, 14%);
 }
 
 input[type=range]::-moz-range-thumb {
@@ -389,7 +388,7 @@ input[type=range]::-ms-thumb {
   z-index: 1;
   left: 0;
   top: 5px;
-  width: 100%;
+  width: 99%;
   height: 10px;
   background-color: #e6e6e6;
   overflow: hidden;

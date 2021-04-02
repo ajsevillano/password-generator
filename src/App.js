@@ -105,8 +105,6 @@ const App = () => {
         navigator.clipboard.writeText(inputEl.current.value);
   };
 
-  console.log(((passLength - 1) * 100) / 29);
-
   return (
     <Layout>
       <h1>Password Generator</h1>

@@ -58,16 +58,16 @@ input[type='range']::-ms-fill-lower {
 //Thumbs
 
 input[type='range']::-webkit-slider-thumb {
-  border: 6px solid rgb(238, 238, 238);
-  height: 24px;
-  width: 24px;
+  border: 9px solid rgb(238, 238, 238);
+  height: 34px;
+  width: 34px;
   border-radius: 100px;
   background: #ff4163;
-  margin-left: 10px;
+
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
-  transform: translateY(20%);
+  transform: translate(-2%, 14%);
 }
 input[type='range']::-moz-range-thumb {
   box-sizing: border-box;
