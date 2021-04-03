@@ -68,6 +68,10 @@ p {
   .input-container {
     flex-direction: column;
   }
+  .input-container input {
+    padding: 12px 57px 20px 48px;
+    font-size: 1.5rem;
+  }
 }
 .button {
   background-color: #ff4163;
@@ -115,6 +119,27 @@ p {
   100% {
     bottom: 3.4em;
     opacity: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .button {
+    margin-top: 30px;
+    font-size: 2rem;
+    justify-content: center;
+  }
+  .button:active {
+    border-bottom: 4px solid #dd2345;
+  }
+
+  .copied-animation::after {
+    display: inline;
+    color: white;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    width: 290px;
+    content: "👍🏻 Copied!";
+    animation: 1s ease-in-out 0s 1 normal forwards running copyit;
   }
 }
 .label-input-checkbox {
@@ -278,11 +303,11 @@ p {
 
 @media screen and (max-width: 768px) {
   .secure-bar {
-    bottom: 66px;
+    bottom: 93px;
   }
 
   .secure-bar-background {
-    bottom: 66px;
+    bottom: 93px;
     width: 100%;
   }
 
@@ -475,6 +500,15 @@ input[type=range]::-ms-thumb {
     font-size: 22px;
     margin-bottom: 20px;
     text-align: center;
+  }
+
+  .sync-container {
+    right: 15px;
+    top: 14px;
+  }
+
+  .lock-icon {
+    top: 11px;
   }
 }
 
