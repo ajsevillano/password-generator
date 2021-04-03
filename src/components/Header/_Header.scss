@@ -1,8 +1,22 @@
 .header {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #ffffff;
   height: 35vh;
   width: 100%;
+}
+
+.lottie-animation {
+  width: 169px;
+  height: 146px;
+}
+
+//Mobile styles
+@media screen and (max-width: 768px) {
+  .lottie-animation {
+    width: 103px;
+    height: 80px;
+  }
 }

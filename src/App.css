@@ -453,6 +453,7 @@ input[type=range]::-ms-thumb {
 }
 .header {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #ffffff;
@@ -460,6 +461,17 @@ input[type=range]::-ms-thumb {
   width: 100%;
 }
 
+.lottie-animation {
+  width: 169px;
+  height: 146px;
+}
+
+@media screen and (max-width: 768px) {
+  .lottie-animation {
+    width: 103px;
+    height: 80px;
+  }
+}
 .lock-icon {
   position: absolute;
   top: 15px;

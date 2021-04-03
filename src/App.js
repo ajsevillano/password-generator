@@ -140,7 +140,7 @@ const App = () => {
 
       <div className="slider-container">
         <p className="slider-p">
-          Password Length:<span> {passLength} </span>
+          Password length:<span> {passLength} </span>
         </p>
         <div className="mega-container">
           <Slider handleslider={handleSlider} passLength={passLength} />
