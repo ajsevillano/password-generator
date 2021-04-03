@@ -432,7 +432,7 @@ input[type=range]::-ms-thumb {
   align-items: center;
 }
 .title-container h1 {
-  font-size: 47px;
+  font-size: 2.25rem;
 }
 .title-container p {
   margin-top: 15px;
@@ -441,6 +441,7 @@ input[type=range]::-ms-thumb {
 @media screen and (max-width: 768px) {
   .title-container h1 {
     font-size: 30px;
+    text-align: center;
   }
   .title-container p {
     text-align: center;
@@ -452,7 +453,7 @@ input[type=range]::-ms-thumb {
   align-items: center;
   justify-content: center;
   background-color: #ffffff;
-  height: 40vh;
+  height: 35vh;
   width: 100%;
 }
 
