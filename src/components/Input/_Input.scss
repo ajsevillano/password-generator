@@ -2,6 +2,7 @@
   margin-top: 20px;
   margin-bottom: 20px;
   position: relative;
+  display: flex;
   input {
     width: 100%;
     border: 1px solid #e1e4e8;
@@ -15,5 +16,12 @@
     color: #0b2138;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
+  }
+}
+
+//Mobile styles
+@media screen and (max-width: 768px) {
+  .input-container {
+    flex-direction: column;
   }
 }

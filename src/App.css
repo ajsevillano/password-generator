@@ -29,10 +29,6 @@ p {
   justify-content: center;
 }
 
-.input-container {
-  display: flex;
-}
-
 @media screen and (max-width: 768px) {
   .side {
     display: none;
@@ -51,6 +47,7 @@ p {
   margin-top: 20px;
   margin-bottom: 20px;
   position: relative;
+  display: flex;
 }
 .input-container input {
   width: 100%;
@@ -67,6 +64,11 @@ p {
   font-weight: 600;
 }
 
+@media screen and (max-width: 768px) {
+  .input-container {
+    flex-direction: column;
+  }
+}
 .button {
   background-color: #ff4163;
   color: white;
@@ -274,6 +276,36 @@ p {
   background-color: #c2e4d0;
 }
 
+@media screen and (max-width: 768px) {
+  .secure-bar {
+    bottom: 66px;
+  }
+
+  .secure-bar-background {
+    bottom: 66px;
+    width: 100%;
+  }
+
+  .very-weak-password {
+    width: 10%;
+  }
+
+  .weak-password {
+    width: 40%;
+  }
+
+  .medium-password {
+    width: 60%;
+  }
+
+  .strong-password {
+    width: 80%;
+  }
+
+  .very-strong-password {
+    width: 100%;
+  }
+}
 input[type=range] {
   -webkit-appearance: none;
   -moz-appearance: none;
