@@ -87,6 +87,8 @@ body {
   border-bottom: 4px solid #dd2345;
   outline: none;
   position: relative;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 .button span {
   margin-left: 10px;
@@ -107,7 +109,7 @@ body {
   position: absolute;
   left: 15px;
   width: 90px;
-  content: "🎉 Copied!";
+  content: "👍🏻 Copied!";
   animation: 1s ease-in-out 0s 1 normal forwards running copyit;
 }
 
