@@ -143,6 +143,7 @@ p {
   cursor: pointer;
   border-radius: 6px;
   transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .label-input-checkbox .check-box {
@@ -165,6 +166,7 @@ p {
   border: 1px solid #cccfdb;
   transition: all 0.2s ease;
   box-shadow: 0 1px 1px rgba(0, 16, 75, 0.05);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .label-input-checkbox span:first-child svg {
@@ -354,6 +356,7 @@ input[type=range] {
   position: relative;
   background-color: transparent;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 input[type=range]::-moz-range-track {
@@ -529,6 +532,7 @@ input[type=range]::-ms-thumb {
   .sync-container {
     right: 15px;
     top: 14px;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .lock-icon {

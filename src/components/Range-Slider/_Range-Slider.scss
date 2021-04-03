@@ -11,6 +11,7 @@ input[type='range'] {
   position: relative;
   background-color: transparent;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 //Track bar Firefox and MS (No custom style in webkit)
