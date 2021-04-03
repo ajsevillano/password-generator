@@ -75,6 +75,7 @@
   display: none;
 }
 
+//Animations
 @-moz-keyframes wave {
   50% {
     transform: scale(0.9);
@@ -96,6 +97,7 @@
   }
 }
 
+//Mobile
 @media screen and (max-width: 768px) {
   .label-input-checkbox .check-box-label {
     display: none;
