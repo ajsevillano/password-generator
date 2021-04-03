@@ -4,7 +4,11 @@
   align-items: center;
 
   h1 {
-    font-size: 40px;
+    font-size: 47px;
+  }
+
+  p {
+    margin-top: 15px;
   }
 }
 
@@ -15,6 +19,7 @@
     }
     p {
       text-align: center;
+      width: 300px;
     }
   }
 }
