@@ -4,6 +4,7 @@
 @use './components/Checkbox/Checkbox';
 @use './components/SecureBar/SecureBar';
 @use './components/Range-Slider/Range-Slider';
+@use './components/Title/Title';
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
@@ -59,4 +60,21 @@
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .slider-container {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .mega-container {
+    width: 100%;
+  }
+
+  .slider-p {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
 }

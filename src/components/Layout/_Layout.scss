@@ -11,6 +11,10 @@ body {
   color: #0b2138;
 }
 
+p {
+  color: #5c5c5c;
+}
+
 .container {
   display: flex;
   height: 100vh;
@@ -22,14 +26,6 @@ body {
   flex-direction: column;
   display: flex;
   justify-content: center;
-
-  h1 {
-    font-size: 42px;
-  }
-
-  p {
-    color: #5c5c5c;
-  }
 }
 
 .input-container {

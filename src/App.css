@@ -12,6 +12,10 @@ body {
   color: #0b2138;
 }
 
+p {
+  color: #5c5c5c;
+}
+
 .container {
   display: flex;
   height: 100vh;
@@ -23,12 +27,6 @@ body {
   flex-direction: column;
   display: flex;
   justify-content: center;
-}
-.main-contain h1 {
-  font-size: 42px;
-}
-.main-contain p {
-  color: #5c5c5c;
 }
 
 .input-container {
@@ -361,6 +359,23 @@ input[type=range]::-ms-thumb {
   background-color: #ff4163;
 }
 
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title-container h1 {
+  font-size: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .title-container h1 {
+    font-size: 30px;
+  }
+  .title-container p {
+    text-align: center;
+  }
+}
 .lock-icon {
   position: absolute;
   top: 15px;
@@ -412,6 +427,23 @@ input[type=range]::-ms-thumb {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .slider-container {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .mega-container {
+    width: 100%;
+  }
+
+  .slider-p {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -7,6 +7,7 @@ import Button from './components/Button/index';
 import CheckBox from './components/Checkbox/Index';
 import Slider from './components/Range-Slider/index';
 import SecureBar from './components/SecureBar/Index';
+import Title from './components/Title/Index';
 
 import { generatePassword, setPasswordLength } from './helpers';
 
@@ -121,8 +122,7 @@ const App = () => {
 
   return (
     <Layout>
-      <h1>Password Generator</h1>
-      <p> Generate a secure password to use on your daily basics!</p>
+      <Title />
       <div className="input-container">
         <FcLock size={35} className={'lock-icon'} />
         <div className="sync-container" onClick={handleClick}>
