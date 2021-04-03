@@ -1,4 +1,11 @@
-const Checkbox = ({ name, onChange, label, isChecked, filters }) => {
+const Checkbox = ({
+  name,
+  onChange,
+  label,
+  labelMobile,
+  isChecked,
+  filters,
+}) => {
   const handleDisabled = () => {
     const disallowEmptyCheckBox = Object.values(filters).filter(
       (value) => value
@@ -20,12 +27,13 @@ const Checkbox = ({ name, onChange, label, isChecked, filters }) => {
       />
 
       <label className="label-input-checkbox" htmlFor={name}>
-        <span>
+        <span className="check-box">
           <svg width="12px" height="10px">
             <use href="#check"></use>
           </svg>
         </span>
-        <span>{label}</span>
+        <span className="check-box-label">{label}</span>
+        <span className="label-mobile">{labelMobile}</span>
       </label>
     </>
   );

@@ -150,10 +150,15 @@ p {
   transition: all 0.2s ease;
 }
 
-.label-input-checkbox span {
+.label-input-checkbox .check-box {
   float: left;
   vertical-align: middle;
   transform: translate3d(0, 0, 0);
+}
+
+.input-checkbox {
+  position: absolute;
+  visibility: hidden;
 }
 
 .label-input-checkbox span:first-child {
@@ -183,18 +188,8 @@ p {
   transform: translate3d(0, 0, 0);
 }
 
-.label-input-checkbox span:last-child {
-  padding-left: 8px;
-  line-height: 18px;
-}
-
 .label-input-checkbox:hover span:first-child {
   border-color: #ff4163;
-}
-
-.input-checkbox {
-  position: absolute;
-  visibility: hidden;
 }
 
 .input-checkbox:checked + .label-input-checkbox span:first-child {
@@ -215,6 +210,15 @@ p {
   user-select: none;
 }
 
+.label-input-checkbox .check-box-label {
+  padding-left: 8px;
+  line-height: 18px;
+}
+
+.label-mobile {
+  display: none;
+}
+
 @-moz-keyframes wave {
   50% {
     transform: scale(0.9);
@@ -233,6 +237,17 @@ p {
 @keyframes wave {
   50% {
     transform: scale(0.9);
+  }
+}
+@media screen and (max-width: 768px) {
+  .label-input-checkbox .check-box-label {
+    display: none;
+  }
+
+  .label-mobile {
+    display: flex;
+    padding-left: 8px;
+    line-height: 18px;
   }
 }
 .secure-bar {
