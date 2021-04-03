@@ -15,11 +15,7 @@ body {
 .container {
   display: flex;
   height: 100vh;
-}
-
-.side {
-  background-color: #ff4163;
-  width: 30%;
+  justify-content: center;
 }
 
 .main-contain {
@@ -27,8 +23,6 @@ body {
   flex-direction: column;
   display: flex;
   justify-content: center;
-  margin-left: 40px;
-  margin-right: auto;
 }
 .main-contain h1 {
   font-size: 42px;
