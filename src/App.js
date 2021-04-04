@@ -13,6 +13,8 @@ import { generatePassword, setPasswordLength } from './helpers';
 import { FcLock } from 'react-icons/fc';
 import { FaSync } from 'react-icons/fa';
 
+import Confirm from './assets/confirm.wav';
+
 const App = () => {
   const inputEl = useRef('');
 
@@ -108,14 +110,17 @@ const App = () => {
 
   //Copy to Clipboard Button
   const copyToClipBoard = () => {
+    const confirmSound = new Audio(Confirm);
     return (
       !navigator.clipboard
         ? // Execute deprecated execCommand if browser doesn't allow clipboard Api.
           (inputEl.current.select(),
           document.execCommand('copy'),
+          confirmSound.play(),
           setpasswordCopied(true))
         : // Otherwhise
           navigator.clipboard.writeText(inputEl.current.value),
+      confirmSound.play(),
       setpasswordCopied(true),
       setTimeout(() => {
         setpasswordCopied(false);
