@@ -1,6 +1,6 @@
 # Custom password generator v 1.0
 
-![](https://ibb.co/9Gx89Jd)
+![](https://www.ajsevillano.com/pg-screenshot.jpg)
 
 Custom password generator is a React.js app for producing random and strong passwords for using on a daily basis.
 
