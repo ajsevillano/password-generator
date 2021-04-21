@@ -22,7 +22,7 @@ Random password generator is written using Sass, React.js and bootstrapped with 
 
 ## Download,launch & build the App
 
-To start using the App in your local enviroment,donwload or clone this repository and run:
+To start using the App in your local enviroment,donwload or clone this repository and run
 
 ### `npm init`
 
