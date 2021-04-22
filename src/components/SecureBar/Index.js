@@ -1,5 +1,5 @@
 const SecureBar = ({ passLength }) => {
-  const PasswordStrength = (colorParams) => {
+  const passwordStrength = (colorParams) => {
     switch (true) {
       case passLength <= 3:
         return colorParams === 'secure-bar'
@@ -33,9 +33,9 @@ const SecureBar = ({ passLength }) => {
 
   return (
     <>
-      <div className={`secure-bar ${PasswordStrength('secure-bar')}`}></div>
+      <div className={`secure-bar ${passwordStrength('secure-bar')}`}></div>
       <div
-        className={`secure-bar-background ${PasswordStrength(
+        className={`secure-bar-background ${passwordStrength(
           'secure-bar-background'
         )}`}
       ></div>

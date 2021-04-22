@@ -19,7 +19,7 @@
   position: absolute;
   right: 130px;
   top: 20px;
-  color: #cccccc;
+  color: #ccc;
   cursor: pointer;
 }
 
@@ -31,7 +31,7 @@
   font-size: 18px;
 
   span {
-    color: #333333;
+    color: #333;
     font-weight: 600;
   }
 }
@@ -40,6 +40,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

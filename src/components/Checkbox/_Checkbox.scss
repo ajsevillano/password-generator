@@ -31,6 +31,7 @@
   box-shadow: 0 1px 1px rgba(0, 16, 75, 0.05);
   -webkit-tap-highlight-color: transparent;
 }
+
 .label-input-checkbox span:first-child svg {
   position: absolute;
   top: 3px;
@@ -56,6 +57,7 @@
   border-color: #ff4163;
   animation: wave 0.4s ease;
 }
+
 .input-checkbox:checked + .label-input-checkbox span:first-child svg {
   stroke-dashoffset: 0;
 }
@@ -89,11 +91,13 @@
     transform: scale(0.9);
   }
 }
+
 @-o-keyframes wave {
   50% {
     transform: scale(0.9);
   }
 }
+
 @keyframes wave {
   50% {
     transform: scale(0.9);
