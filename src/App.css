@@ -1,5 +1,7 @@
 @charset "UTF-8";
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -38,19 +40,21 @@ p {
     justify-content: center;
   }
 }
+
 .input-container {
   margin-top: 20px;
   margin-bottom: 20px;
   position: relative;
   display: flex;
 }
+
 .input-container input {
   width: 100%;
   border: 1px solid #e1e4e8;
   border-right: none;
   border-radius: 4px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
   outline: none;
   padding: 12px 12px 20px 48px;
   font-size: 2rem;
@@ -96,7 +100,7 @@ p {
   background-color: #fc4c6c;
   outline: none;
   position: relative;
-  border-bottom: 0px;
+  border-bottom: 0;
 }
 
 .copied-animation::after {
@@ -114,17 +118,20 @@ p {
     bottom: 2.4em;
     opacity: 1;
   }
+
   100% {
     bottom: 3.4em;
     opacity: 0;
   }
 }
+
 @media screen and (max-width: 768px) {
   .button {
     margin-top: 30px;
     font-size: 2rem;
     justify-content: center;
   }
+
   .button:active {
     border-bottom: 4px solid #dd2345;
   }
@@ -140,6 +147,7 @@ p {
     animation: 1s ease-in-out 0s 1 normal forwards running copyit;
   }
 }
+
 .label-input-checkbox {
   -webkit-user-select: none;
   user-select: none;
@@ -365,7 +373,7 @@ input[type='range'] {
 input[type='range']::-moz-range-track {
   width: 100%;
   height: 4px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 100px;
   margin: 11px 0;
 }
@@ -373,7 +381,7 @@ input[type='range']::-moz-range-track {
 input[type='range']::-ms-track {
   width: 100%;
   height: 4px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 100px;
   color: transparent;
   padding: 11px 0;
@@ -385,7 +393,7 @@ input[type='range']::-ms-fill-lower,
 input[type='range']::-ms-fill-upper {
   width: 100%;
   height: 4px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 100px;
 }
 
@@ -423,7 +431,7 @@ input[type='range']::-ms-thumb {
   top: 5px;
   width: 99%;
   height: 10px;
-  background-color: #ffffff;
+  background-color: #fff;
   overflow: hidden;
 }
 .track-bar .progress-bar {
@@ -437,6 +445,7 @@ input[type='range']::-ms-thumb {
   flex-direction: column;
   align-items: center;
 }
+
 .title-container h1 {
   font-size: 2.25rem;
 }
@@ -454,12 +463,13 @@ input[type='range']::-ms-thumb {
     width: 300px;
   }
 }
+
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
+  background-color: #fff;
   height: 35vh;
   width: 100%;
 }
@@ -479,6 +489,7 @@ input[type='range']::-ms-thumb {
     height: 37vh;
   }
 }
+
 .lock-icon {
   position: absolute;
   top: 15px;
@@ -500,8 +511,9 @@ input[type='range']::-ms-thumb {
 .slider-p {
   font-size: 18px;
 }
+
 .slider-p span {
-  color: #333333;
+  color: #333;
   font-weight: 600;
 }
 
