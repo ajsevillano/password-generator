@@ -2,6 +2,8 @@
 
 ![](https://www.ajsevillano.com/pg-screenshot.jpg)
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/932b456405d340868271fe85ef9a672f)](https://www.codacy.com/gh/ajsevillano/password-generator/dashboard?utm_source=github.com&utm_medium=referral&utm_content=ajsevillano/password-generator&utm_campaign=Badge_Grade)
+
 Custom password generator is a React.js app for producing random and strong passwords for using on a daily basis.
 
 ## Password generator functionalities
