@@ -1,19 +1,21 @@
-import './App.css';
+//Libs
 import React, { useState, useEffect, useRef } from 'react';
+import { generatePassword, setPasswordLength } from '../../utils/helpers';
 
-import Layout from './components/Layout/Index';
-import Input from './components/Input/Index';
-import Button from './components/Button/index';
-import CheckBox from './components/Checkbox/Index';
-import Slider from './components/Range-Slider/index';
-import SecureBar from './components/SecureBar/Index';
-
-import { generatePassword, setPasswordLength } from './helpers';
-
+//Icons
 import { FcLock } from 'react-icons/fc';
 import { FaSync } from 'react-icons/fa';
 
-import Confirm from './assets/confirm.wav';
+//Components
+import Layout from '../Layout';
+import Input from '../Input';
+import Button from '../Button';
+import CheckBox from '../Checkbox';
+import Slider from '../Range-Slider';
+import SecureBar from '../SecureBar';
+
+//Sounds
+import Confirm from '../../assets/confirm.wav';
 
 const App = () => {
   const inputEl = useRef('');

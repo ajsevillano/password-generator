@@ -1,4 +1,4 @@
-import Header from '../Header/Index';
+import Header from '../Header';
 
 const Index = ({ children }) => {
   return (

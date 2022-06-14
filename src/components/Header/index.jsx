@@ -1,4 +1,4 @@
-import Title from '../Title/Index';
+import Title from '../Title';
 
 //Lottie animation helper and json import
 import LottieAnimation from '../../utils/Lottie';
