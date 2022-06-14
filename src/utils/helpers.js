@@ -1,5 +1,4 @@
 let characters = '';
-let passwordLength = '';
 
 const setUpperCase = (isUpperCase) => {
   isUpperCase && (characters += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
@@ -21,30 +20,29 @@ const getRandomInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-export const setPasswordLength = (length) => {
-  passwordLength = length;
-  return passwordLength;
-};
-
-const passwordCharacters = () => {
-  const characterList = characters;
+const passwordCharacters = (passLength) => {
   let password = '';
-  if (characterList.length > 0) {
-    for (let i = 0; i < passwordLength; i++) {
-      password += characterList[getRandomInteger(0, characterList.length - 1)];
+  if (characters.length > 0) {
+    for (let i = 0; i < passLength; i++) {
+      password += characters[getRandomInteger(0, characters.length - 1)];
     }
     characters = '';
-    passwordLength = 0;
     return password;
   }
 };
 
-export const generatePassword = (uppercase, lowercase, symbols, numbers) => {
-  setPasswordLength(passwordLength);
+export const generatePassword = (
+  uppercase,
+  lowercase,
+  symbols,
+  numbers,
+  passLength
+) => {
   setUpperCase(uppercase);
   setLowerCase(lowercase);
   setSymbols(symbols);
   setNumber(numbers);
-  const password = passwordCharacters();
+  const password = passwordCharacters(passLength);
+
   return password;
 };

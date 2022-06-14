@@ -1,6 +1,6 @@
 //Libs
 import React, { useState, useEffect, useRef } from 'react';
-import { generatePassword, setPasswordLength } from '../../utils/helpers';
+import { generatePassword } from '../../utils/helpers';
 
 //Icons
 import { FcLock } from 'react-icons/fc';
@@ -65,8 +65,9 @@ const App = () => {
   const { uppercase, lowercase, symbols, numbers } = filters;
 
   useEffect(() => {
-    setPasswordLength(passLength);
-    setPassword(generatePassword(uppercase, lowercase, symbols, numbers));
+    setPassword(
+      generatePassword(uppercase, lowercase, symbols, numbers, passLength)
+    );
   }, [checkBoxes, passLength, uppercase, lowercase, symbols, numbers]);
 
   //Generate Password Button
@@ -74,8 +75,9 @@ const App = () => {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
-      setPasswordLength(passLength);
-      setPassword(generatePassword(uppercase, lowercase, symbols, numbers));
+      setPassword(
+        generatePassword(uppercase, lowercase, symbols, numbers, passLength)
+      );
     }, 200);
 
     setTimeout(() => {
@@ -99,7 +101,6 @@ const App = () => {
     setLoading(true);
     setCheckBoxes(updateCheckBox);
     setFilters(setFilterValues);
-
     setTimeout(() => {
       setLoading(false);
     }, 450);
