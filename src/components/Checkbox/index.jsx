@@ -6,11 +6,15 @@ const Checkbox = ({
   isChecked,
   filters,
 }) => {
+  /**
+   * If the number of checked checkboxes is equal to 1 and the current checkbox is checked, then return
+   * true.
+   * @returns a boolean value.
+   */
   const handleDisabled = () => {
     const disallowEmptyCheckBox = Object.values(filters).filter(
       (value) => value
     ).length;
-
     return disallowEmptyCheckBox === 1 && isChecked;
   };
 

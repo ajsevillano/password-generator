@@ -14,6 +14,9 @@ import CheckBox from '../Checkbox';
 import Slider from '../Range-Slider';
 import SecureBar from '../SecureBar';
 
+//Data
+import { defaultValues } from '../../data/defaultValues';
+
 //Sounds
 import Confirm from '../../assets/confirm.wav';
 
@@ -23,37 +26,8 @@ const App = () => {
   const [passwordCopied, setpasswordCopied] = useState(false);
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const [passLength, setPassLength] = useState(16);
-  const [checkBoxes, setCheckBoxes] = useState([
-    {
-      id: 0,
-      name: 'uppercase',
-      label: 'Uppercase',
-      labelMobile: 'ABC',
-      isChecked: true,
-    },
-    {
-      id: 1,
-      name: 'lowercase',
-      label: 'Lowercase',
-      labelMobile: 'abc',
-      isChecked: true,
-    },
-    {
-      id: 2,
-      name: 'symbols',
-      label: 'Symbols',
-      labelMobile: '#@!',
-      isChecked: true,
-    },
-    {
-      id: 3,
-      name: 'numbers',
-      label: 'Numbers',
-      labelMobile: '123',
-      isChecked: true,
-    },
-  ]);
+  const [passLength, setPassLength] = useState(defaultValues.defaultLength);
+  const [checkBoxes, setCheckBoxes] = useState(defaultValues.checkBoxesValues);
 
   const [filters, setFilters] = useState({
     uppercase: true,
