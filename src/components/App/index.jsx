@@ -27,16 +27,20 @@ const App = () => {
     setPassword(generatePassword(checkBoxes, passLength));
   }, [checkBoxes, passLength]);
 
-  //Checkboxes Handler
-  const handleCheckBox = (e) => {
+  //Update CheckBox
+  const updateCheckBox = (e) => {
     const updateCheckBox = checkBoxes.map((eachCheckBox) => {
       return eachCheckBox.name === e.target.name
         ? { ...eachCheckBox, isChecked: e.target.checked }
         : eachCheckBox;
     });
+    return updateCheckBox;
+  };
 
+  //Checkboxes Handler
+  const handleCheckBox = (e) => {
     setLoading(true);
-    setCheckBoxes(updateCheckBox);
+    setCheckBoxes(updateCheckBox(e));
     setTimeout(() => {
       setLoading(false);
     }, 450);
@@ -46,7 +50,13 @@ const App = () => {
     <Layout>
       <div className="input-container">
         <FcLock size={35} className={'lock-icon'} />
-        <RefreshButton loading={loading} />
+        <RefreshButton
+          loading={loading}
+          setLoading={setLoading}
+          setPassword={setPassword}
+          checkBoxes={checkBoxes}
+          passLength={passLength}
+        />
         <SecureBar passLength={passLength} />
         <Input value={password} />
         <CopyButton
