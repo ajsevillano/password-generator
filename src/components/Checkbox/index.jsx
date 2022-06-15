@@ -12,9 +12,7 @@ const Checkbox = ({
    * @returns a boolean value.
    */
   const handleDisabled = () => {
-    const disallowEmptyCheckBox = Object.values(filters).filter(
-      (value) => value
-    ).length;
+    const disallowEmptyCheckBox = filters.filter((value) => value).length;
     return disallowEmptyCheckBox === 1 && isChecked;
   };
 

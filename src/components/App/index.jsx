@@ -142,7 +142,7 @@ const App = () => {
             labelMobile={eachCheckBox.labelMobile}
             isChecked={eachCheckBox.isChecked}
             onChange={handleCheckBox}
-            filters={filters}
+            filters={checkBoxes.map((checked) => checked.isChecked)}
           />
         ))}
       </div>
