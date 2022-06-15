@@ -21,7 +21,7 @@ import { defaultValues } from '../../data/defaultValues';
 import Confirm from '../../assets/confirm.wav';
 
 const App = () => {
-  const [passwordCopied, setpasswordCopied] = useState(false);
+  const [passwordCopiedAnimation, setpasswordCopiedAnimation] = useState(false);
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [passLength, setPassLength] = useState(defaultValues.defaultLength);
@@ -68,18 +68,11 @@ const App = () => {
   const copyToClipBoard = () => {
     const confirmSound = new Audio(Confirm);
     return (
-      !navigator.clipboard
-        ? // Execute deprecated execCommand if browser doesn't allow clipboard Api.
-          (password,
-          document.execCommand('copy'),
-          confirmSound.play(),
-          setpasswordCopied(true))
-        : // Otherwhise
-          navigator.clipboard.writeText(password),
+      navigator.clipboard.writeText(password),
       confirmSound.play(),
-      setpasswordCopied(true),
+      setpasswordCopiedAnimation(true),
       setTimeout(() => {
-        setpasswordCopied(false);
+        setpasswordCopiedAnimation(false);
       }, 1000)
     );
   };
@@ -95,7 +88,7 @@ const App = () => {
         <Input value={password} />
         <Button
           copyToClipBoard={copyToClipBoard}
-          passwordCopied={passwordCopied}
+          passwordCopied={passwordCopiedAnimation}
         />
       </div>
 
