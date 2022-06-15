@@ -21,8 +21,6 @@ import { defaultValues } from '../../data/defaultValues';
 import Confirm from '../../assets/confirm.wav';
 
 const App = () => {
-  const inputEl = useRef('');
-
   const [passwordCopied, setpasswordCopied] = useState(false);
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -72,12 +70,12 @@ const App = () => {
     return (
       !navigator.clipboard
         ? // Execute deprecated execCommand if browser doesn't allow clipboard Api.
-          (inputEl.current.select(),
+          (password,
           document.execCommand('copy'),
           confirmSound.play(),
           setpasswordCopied(true))
         : // Otherwhise
-          navigator.clipboard.writeText(inputEl.current.value),
+          navigator.clipboard.writeText(password),
       confirmSound.play(),
       setpasswordCopied(true),
       setTimeout(() => {
@@ -94,7 +92,7 @@ const App = () => {
           <FaSync size={30} className={!loading ? '' : 'sync-animation'} />
         </div>
         <SecureBar passLength={passLength} />
-        <Input inputRef={inputEl} value={password} />
+        <Input value={password} />
         <Button
           copyToClipBoard={copyToClipBoard}
           passwordCopied={passwordCopied}
