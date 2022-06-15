@@ -1,5 +1,5 @@
 //Libs
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { generatePassword } from '../../utils/helpers';
 
 //Icons
@@ -14,18 +14,16 @@ import Slider from '../Range-Slider';
 import SecureBar from '../SecureBar';
 import RefreshButton from '../RefreshButton';
 
-//Data
-import { defaultValues } from '../../data/defaultValues';
-
 //Context
 import GlobalContext from '../../context/GlobalContext';
 import { useContext } from 'react';
 
 const App = () => {
-  const [checkBoxes, setCheckBoxes] = useState(defaultValues.checkBoxesValues);
-  const { passwordState, passwordLengthState } = useContext(GlobalContext);
+  const { passwordState, passwordLengthState, checkBoxesState } =
+    useContext(GlobalContext);
   const { setPassword } = passwordState;
   const { passLength } = passwordLengthState;
+  const { checkBoxes, setCheckBoxes } = checkBoxesState;
 
   useEffect(() => {
     setPassword(generatePassword(checkBoxes, passLength));
@@ -45,10 +43,10 @@ const App = () => {
     <Layout>
       <div className="input-container">
         <FcLock size={35} className={'lock-icon'} />
-        <RefreshButton checkBoxes={checkBoxes} />
+        <RefreshButton />
         <SecureBar />
         <Input />
-        <CopyButton checkBoxes={checkBoxes} />
+        <CopyButton />
       </div>
 
       <div className="slider-container">
