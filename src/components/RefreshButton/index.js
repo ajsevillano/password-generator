@@ -2,13 +2,13 @@
 import { FaSync } from 'react-icons/fa';
 import { generatePassword } from '../../utils/helpers';
 
-const RefreshButton = ({
-  loading,
-  setLoading,
-  setPassword,
-  checkBoxes,
-  passLength,
-}) => {
+//Context
+import GlobalContext from '../../context/GlobalContext';
+import { useContext } from 'react';
+
+const RefreshButton = ({ setPassword, checkBoxes, passLength }) => {
+  const { loading, setLoading } = useContext(GlobalContext);
+
   //Generate Password Button
   const handleClick = (e) => {
     e.preventDefault();

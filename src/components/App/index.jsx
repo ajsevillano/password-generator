@@ -19,7 +19,6 @@ import RefreshButton from '../RefreshButton';
 
 const App = () => {
   const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(false);
   const [passLength, setPassLength] = useState(defaultValues.defaultLength);
   const [checkBoxes, setCheckBoxes] = useState(defaultValues.checkBoxesValues);
 
@@ -42,8 +41,6 @@ const App = () => {
       <div className="input-container">
         <FcLock size={35} className={'lock-icon'} />
         <RefreshButton
-          loading={loading}
-          setLoading={setLoading}
           setPassword={setPassword}
           checkBoxes={checkBoxes}
           passLength={passLength}
@@ -52,7 +49,6 @@ const App = () => {
         <Input value={password} />
         <CopyButton
           password={password}
-          setLoading={setLoading}
           setPassword={setPassword}
           checkBoxes={checkBoxes}
           passLength={passLength}
@@ -81,7 +77,6 @@ const App = () => {
             labelMobile={eachCheckBox.labelMobile}
             isChecked={eachCheckBox.isChecked}
             filters={checkBoxes.map((checked) => checked.isChecked)}
-            setLoading={setLoading}
             setCheckBoxes={setCheckBoxes}
             updateCheckBox={updateCheckBox}
           />

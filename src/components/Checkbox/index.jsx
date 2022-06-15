@@ -1,6 +1,9 @@
+//Context
+import GlobalContext from '../../context/GlobalContext';
+import { useContext } from 'react';
+
 const Checkbox = ({
   name,
-  setLoading,
   setCheckBoxes,
   label,
   labelMobile,
@@ -8,6 +11,8 @@ const Checkbox = ({
   filters,
   updateCheckBox,
 }) => {
+  const { setLoading } = useContext(GlobalContext);
+
   /**
    * If the number of checked checkboxes is equal to 1 and the current checkbox is checked, then return
    * true.

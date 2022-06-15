@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
 import App from './components/App';
-import GlobalContext from './context/GlobalContext';
+import { GifsContextProvider } from './context/GlobalContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalContext>
+    <GifsContextProvider>
       <App />
-    </GlobalContext>
+    </GifsContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

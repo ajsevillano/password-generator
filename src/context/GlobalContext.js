@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Context = React.createContext({});
 
-export function GlobalContextProvider({ children }) {
+export function GifsContextProvider({ children }) {
   const [loading, setLoading] = useState(false);
 
   return (
