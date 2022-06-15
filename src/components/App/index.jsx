@@ -42,11 +42,6 @@ const App = () => {
     }, 450);
   };
 
-  //Slider Handler
-  const handleSlider = (e) => {
-    setPassLength(e.target.value);
-  };
-
   return (
     <Layout>
       <div className="input-container">
@@ -68,7 +63,7 @@ const App = () => {
           Password length:<span> {passLength} </span>
         </p>
         <div className="mega-container">
-          <Slider handleslider={handleSlider} passLength={passLength} />
+          <Slider passLength={passLength} setPassLength={setPassLength} />
         </div>
       </div>
       <div className="checkboxes-container">

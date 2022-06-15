@@ -1,6 +1,11 @@
 import React from 'react';
 
-const Slider = ({ handleslider, passLength }) => {
+const Slider = ({ passLength, setPassLength }) => {
+  //Slider Handler
+  const handleSlider = (e) => {
+    setPassLength(e.target.value);
+  };
+
   return (
     <>
       <span className="track-bar">
@@ -15,7 +20,7 @@ const Slider = ({ handleslider, passLength }) => {
         type="range"
         min="1"
         max="30"
-        onChange={handleslider}
+        onChange={handleSlider}
         value={passLength}
         className="range"
       ></input>
