@@ -1,9 +1,9 @@
 //Libs
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { generatePassword } from '../../utils/helpers';
 
-//Icons
-import { FcLock } from 'react-icons/fc';
+//Context
+import GlobalContext from '../../context/GlobalContext';
 
 //Components
 import Layout from '../Layout';
@@ -14,11 +14,11 @@ import Slider from '../Range-Slider';
 import SecureBar from '../SecureBar';
 import RefreshButton from '../RefreshButton';
 
-//Context
-import GlobalContext from '../../context/GlobalContext';
-import { useContext } from 'react';
+//Icons
+import { FcLock } from 'react-icons/fc';
 
 const App = () => {
+  //Contexts
   const { passwordState, passwordLengthState, checkBoxesState } =
     useContext(GlobalContext);
   const { setPassword } = passwordState;
