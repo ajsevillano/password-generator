@@ -31,13 +31,9 @@ const passwordCharacters = (passLength) => {
   }
 };
 
-export const generatePassword = (
-  uppercase,
-  lowercase,
-  symbols,
-  numbers,
-  passLength
-) => {
+export const generatePassword = (checkBoxes, passLength) => {
+  const isChecked = checkBoxes.map((checked) => checked.isChecked);
+  const [uppercase, lowercase, symbols, numbers] = isChecked;
   setUpperCase(uppercase);
   setLowerCase(lowercase);
   setSymbols(symbols);

@@ -29,29 +29,16 @@ const App = () => {
   const [passLength, setPassLength] = useState(defaultValues.defaultLength);
   const [checkBoxes, setCheckBoxes] = useState(defaultValues.checkBoxesValues);
 
-  const [filters, setFilters] = useState({
-    uppercase: true,
-    lowercase: true,
-    symbols: true,
-    numbers: true,
-  });
-
-  const { uppercase, lowercase, symbols, numbers } = filters;
-
   useEffect(() => {
-    setPassword(
-      generatePassword(uppercase, lowercase, symbols, numbers, passLength)
-    );
-  }, [checkBoxes, passLength, uppercase, lowercase, symbols, numbers]);
+    setPassword(generatePassword(checkBoxes, passLength));
+  }, [checkBoxes, passLength]);
 
   //Generate Password Button
   const handleClick = (e) => {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
-      setPassword(
-        generatePassword(uppercase, lowercase, symbols, numbers, passLength)
-      );
+      setPassword(generatePassword(checkBoxes, passLength));
     }, 200);
 
     setTimeout(() => {
@@ -67,14 +54,8 @@ const App = () => {
         : eachCheckBox;
     });
 
-    const setFilterValues = {
-      ...filters,
-      [e.target.name]: e.target.checked,
-    };
-
     setLoading(true);
     setCheckBoxes(updateCheckBox);
-    setFilters(setFilterValues);
     setTimeout(() => {
       setLoading(false);
     }, 450);
