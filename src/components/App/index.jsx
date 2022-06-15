@@ -1,5 +1,5 @@
 //Libs
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { generatePassword } from '../../utils/helpers';
 
 //Icons
@@ -9,7 +9,7 @@ import { FaSync } from 'react-icons/fa';
 //Components
 import Layout from '../Layout';
 import Input from '../Input';
-import Button from '../Button';
+import CopyButton from '../CopyButton';
 import CheckBox from '../Checkbox';
 import Slider from '../Range-Slider';
 import SecureBar from '../SecureBar';
@@ -17,11 +17,7 @@ import SecureBar from '../SecureBar';
 //Data
 import { defaultValues } from '../../data/defaultValues';
 
-//Sounds
-import Confirm from '../../assets/confirm.wav';
-
 const App = () => {
-  const [passwordCopiedAnimation, setpasswordCopiedAnimation] = useState(false);
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [passLength, setPassLength] = useState(defaultValues.defaultLength);
@@ -64,19 +60,6 @@ const App = () => {
     setPassLength(e.target.value);
   };
 
-  //Copy to Clipboard Button
-  const copyToClipBoard = () => {
-    const confirmSound = new Audio(Confirm);
-    return (
-      navigator.clipboard.writeText(password),
-      confirmSound.play(),
-      setpasswordCopiedAnimation(true),
-      setTimeout(() => {
-        setpasswordCopiedAnimation(false);
-      }, 1000)
-    );
-  };
-
   return (
     <Layout>
       <div className="input-container">
@@ -86,10 +69,7 @@ const App = () => {
         </div>
         <SecureBar passLength={passLength} />
         <Input value={password} />
-        <Button
-          copyToClipBoard={copyToClipBoard}
-          passwordCopied={passwordCopiedAnimation}
-        />
+        <CopyButton password={password} />
       </div>
 
       <div className="slider-container">
