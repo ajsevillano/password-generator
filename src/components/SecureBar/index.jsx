@@ -1,4 +1,12 @@
-const SecureBar = ({ passLength }) => {
+//Context
+import GlobalContext from '../../context/GlobalContext';
+import { useContext } from 'react';
+
+const SecureBar = () => {
+  //Context
+  const { passwordLengthState } = useContext(GlobalContext);
+  const { passLength } = passwordLengthState;
+
   const passwordStrength = (colorParams) => {
     switch (true) {
       case passLength <= 3:

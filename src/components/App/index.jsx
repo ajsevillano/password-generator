@@ -12,21 +12,20 @@ import CopyButton from '../CopyButton';
 import CheckBox from '../Checkbox';
 import Slider from '../Range-Slider';
 import SecureBar from '../SecureBar';
+import RefreshButton from '../RefreshButton';
 
 //Data
 import { defaultValues } from '../../data/defaultValues';
-import RefreshButton from '../RefreshButton';
 
 //Context
 import GlobalContext from '../../context/GlobalContext';
 import { useContext } from 'react';
 
 const App = () => {
-  const [passLength, setPassLength] = useState(defaultValues.defaultLength);
   const [checkBoxes, setCheckBoxes] = useState(defaultValues.checkBoxesValues);
-
-  const { passwordState } = useContext(GlobalContext);
-  const { password, setPassword } = passwordState;
+  const { passwordState, passwordLengthState } = useContext(GlobalContext);
+  const { setPassword } = passwordState;
+  const { passLength } = passwordLengthState;
 
   useEffect(() => {
     setPassword(generatePassword(checkBoxes, passLength));
@@ -46,10 +45,10 @@ const App = () => {
     <Layout>
       <div className="input-container">
         <FcLock size={35} className={'lock-icon'} />
-        <RefreshButton checkBoxes={checkBoxes} passLength={passLength} />
-        <SecureBar passLength={passLength} />
-        <Input value={password} />
-        <CopyButton checkBoxes={checkBoxes} passLength={passLength} />
+        <RefreshButton checkBoxes={checkBoxes} />
+        <SecureBar />
+        <Input />
+        <CopyButton checkBoxes={checkBoxes} />
       </div>
 
       <div className="slider-container">
@@ -57,7 +56,7 @@ const App = () => {
           Password length:<span> {passLength} </span>
         </p>
         <div className="mega-container">
-          <Slider passLength={passLength} setPassLength={setPassLength} />
+          <Slider />
         </div>
       </div>
       <div className="checkboxes-container">
