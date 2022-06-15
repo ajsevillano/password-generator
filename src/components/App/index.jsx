@@ -4,7 +4,6 @@ import { generatePassword } from '../../utils/helpers';
 
 //Icons
 import { FcLock } from 'react-icons/fc';
-import { FaSync } from 'react-icons/fa';
 
 //Components
 import Layout from '../Layout';
@@ -16,6 +15,7 @@ import SecureBar from '../SecureBar';
 
 //Data
 import { defaultValues } from '../../data/defaultValues';
+import RefreshButton from '../RefreshButton';
 
 const App = () => {
   const [password, setPassword] = useState('');
@@ -26,19 +26,6 @@ const App = () => {
   useEffect(() => {
     setPassword(generatePassword(checkBoxes, passLength));
   }, [checkBoxes, passLength]);
-
-  //Generate Password Button
-  const handleClick = (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      setPassword(generatePassword(checkBoxes, passLength));
-    }, 200);
-
-    setTimeout(() => {
-      setLoading(false);
-    }, 300);
-  };
 
   //Checkboxes Handler
   const handleCheckBox = (e) => {
@@ -64,12 +51,16 @@ const App = () => {
     <Layout>
       <div className="input-container">
         <FcLock size={35} className={'lock-icon'} />
-        <div className="sync-container" onClick={handleClick}>
-          <FaSync size={30} className={!loading ? '' : 'sync-animation'} />
-        </div>
+        <RefreshButton loading={loading} />
         <SecureBar passLength={passLength} />
         <Input value={password} />
-        <CopyButton password={password} />
+        <CopyButton
+          password={password}
+          setLoading={setLoading}
+          setPassword={setPassword}
+          checkBoxes={checkBoxes}
+          passLength={passLength}
+        />
       </div>
 
       <div className="slider-container">
