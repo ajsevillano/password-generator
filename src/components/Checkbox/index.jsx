@@ -1,10 +1,12 @@
 const Checkbox = ({
   name,
-  onChange,
+  setLoading,
+  setCheckBoxes,
   label,
   labelMobile,
   isChecked,
   filters,
+  updateCheckBox,
 }) => {
   /**
    * If the number of checked checkboxes is equal to 1 and the current checkbox is checked, then return
@@ -16,6 +18,15 @@ const Checkbox = ({
     return disallowEmptyCheckBox === 1 && isChecked;
   };
 
+  //Checkboxes Handler
+  const handleCheckBox = (e) => {
+    setLoading(true);
+    setCheckBoxes(updateCheckBox(e));
+    setTimeout(() => {
+      setLoading(false);
+    }, 450);
+  };
+
   return (
     <>
       <input
@@ -24,7 +35,7 @@ const Checkbox = ({
         type="checkbox"
         checked={isChecked}
         name={name}
-        onChange={onChange}
+        onChange={handleCheckBox}
         disabled={handleDisabled()}
       />
 

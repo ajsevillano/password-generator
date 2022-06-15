@@ -37,15 +37,6 @@ const App = () => {
     return updateCheckBox;
   };
 
-  //Checkboxes Handler
-  const handleCheckBox = (e) => {
-    setLoading(true);
-    setCheckBoxes(updateCheckBox(e));
-    setTimeout(() => {
-      setLoading(false);
-    }, 450);
-  };
-
   return (
     <Layout>
       <div className="input-container">
@@ -89,8 +80,10 @@ const App = () => {
             label={eachCheckBox.label}
             labelMobile={eachCheckBox.labelMobile}
             isChecked={eachCheckBox.isChecked}
-            onChange={handleCheckBox}
             filters={checkBoxes.map((checked) => checked.isChecked)}
+            setLoading={setLoading}
+            setCheckBoxes={setCheckBoxes}
+            updateCheckBox={updateCheckBox}
           />
         ))}
       </div>
