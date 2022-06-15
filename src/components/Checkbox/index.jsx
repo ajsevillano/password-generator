@@ -11,13 +11,10 @@ const Checkbox = ({
   filters,
   updateCheckBox,
 }) => {
-  const { setLoading } = useContext(GlobalContext);
+  const { loadingState } = useContext(GlobalContext);
+  const { setLoading } = loadingState;
 
-  /**
-   * If the number of checked checkboxes is equal to 1 and the current checkbox is checked, then return
-   * true.
-   * @returns a boolean value.
-   */
+  // at least 1 checkbox MUST be checked all the time
   const handleDisabled = () => {
     const disallowEmptyCheckBox = filters.filter((value) => value).length;
     return disallowEmptyCheckBox === 1 && isChecked;

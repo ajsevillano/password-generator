@@ -6,8 +6,10 @@ import { generatePassword } from '../../utils/helpers';
 import GlobalContext from '../../context/GlobalContext';
 import { useContext } from 'react';
 
-const RefreshButton = ({ setPassword, checkBoxes, passLength }) => {
-  const { loading, setLoading } = useContext(GlobalContext);
+const RefreshButton = ({ checkBoxes, passLength }) => {
+  const { loadingState, passwordState } = useContext(GlobalContext);
+  const { loading, setLoading } = loadingState;
+  const { setPassword } = passwordState;
 
   //Generate Password Button
   const handleClick = (e) => {

@@ -4,8 +4,16 @@ import React, { useState } from 'react';
 //Sounds
 import Confirm from '../../assets/confirm.wav';
 
-const CopyButton = ({ password }) => {
+//Context
+import GlobalContext from '../../context/GlobalContext';
+import { useContext } from 'react';
+
+const CopyButton = () => {
   const [passwordCopiedAnimation, setpasswordCopiedAnimation] = useState(false);
+  //Context
+  const { passwordState } = useContext(GlobalContext);
+  const { password } = passwordState;
+
   //Copy to Clipboard Button
   const copyToClipBoard = () => {
     const confirmSound = new Audio(Confirm);
