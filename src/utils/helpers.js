@@ -1,44 +1,45 @@
-let characters = '';
+let charactersString = '';
 
-const setUpperCase = (isUpperCase) => {
-  isUpperCase && (characters += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+const charactersObject = [
+  { uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' },
+  { lowercase: 'abcdefghijklmnopqrstuvwxyz' },
+  { symbol: '!@#$%^&*()<>,.?/[]{}-=_+|/' },
+  { numbers: '0123456789' },
+];
+
+// If the checkbox is checked, then add the corresponding character to the charactersString variable.
+const selectRightCharacters = (isChecked) => {
+  isChecked.map((everyCheck, index) => {
+    return (
+      everyCheck === true &&
+      (charactersString += Object.values(charactersObject[index]))
+    );
+  });
 };
 
-const setLowerCase = (islowercase) => {
-  islowercase && (characters += 'abcdefghijklmnopqrstuvwxyz');
-};
-
-const setSymbols = (isSymbol) => {
-  isSymbol && (characters += '!@#$%^&*()<>,.?/[]{}-=_+|/');
-};
-
-const setNumber = (isNumeric) => {
-  isNumeric && (characters += '0123456789');
-};
-
+//  It returns a random integer between the min and max values, inclusive.
 const getRandomInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-const passwordCharacters = (passLength) => {
+// Randomize the characterString variable
+const randomizePassword = (passLength) => {
   let password = '';
-  if (characters.length > 0) {
+  if (charactersString.length > 0) {
     for (let i = 0; i < passLength; i++) {
-      password += characters[getRandomInteger(0, characters.length - 1)];
+      password +=
+        charactersString[getRandomInteger(0, charactersString.length - 1)];
     }
-    characters = '';
+    charactersString = '';
     return password;
   }
 };
 
+//It creates an array of booleans with the check value of the checkboxes (true o false)
+// Then fulfill the charactersSttring variable and use it to generate a random password.
 export const generatePassword = (checkBoxes, passLength) => {
   const isChecked = checkBoxes.map((checked) => checked.isChecked);
-  const [uppercase, lowercase, symbols, numbers] = isChecked;
-  setUpperCase(uppercase);
-  setLowerCase(lowercase);
-  setSymbols(symbols);
-  setNumber(numbers);
-  const password = passwordCharacters(passLength);
-
+  selectRightCharacters(isChecked);
+  const password = randomizePassword(passLength);
   return password;
 };
