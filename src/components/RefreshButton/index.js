@@ -28,9 +28,17 @@ const RefreshButton = () => {
   };
 
   return (
-    <div className="sync-container" onClick={handleClick}>
-      <FaSync size={30} className={!loading ? '' : 'sync-animation'} />
-    </div>
+    <button
+      data-testid="refreshbutton"
+      className="sync-container"
+      onClick={handleClick}
+    >
+      <FaSync
+        data-testid="icon"
+        size={30}
+        className={!loading ? '' : 'sync-animation'}
+      />
+    </button>
   );
 };
 

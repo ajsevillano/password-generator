@@ -1,0 +1,13 @@
+.sync-container {
+  position: absolute;
+  right: 130px;
+  top: 20px;
+  color: #ccc;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.sync-animation {
+  animation: spin infinite 0.4s linear;
+}
