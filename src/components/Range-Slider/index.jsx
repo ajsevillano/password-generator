@@ -22,6 +22,7 @@ const Slider = () => {
         ></span>
       </span>
       <input
+        data-testid="slider"
         type="range"
         min="1"
         max="30"
