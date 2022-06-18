@@ -19,8 +19,14 @@ const PasswordStrengthBar = () => {
 
   return (
     <>
-      <div className={`secure-bar ${getPasswordStrength()}`}></div>
-      <div className={`secure-bar-background ${getPasswordStrength()}`}></div>
+      <div
+        data-testid="container"
+        className={`secure-bar ${getPasswordStrength()}`}
+      ></div>
+      <div
+        data-testid="containerBackground"
+        className={`secure-bar-background ${getPasswordStrength()}`}
+      ></div>
     </>
   );
 };

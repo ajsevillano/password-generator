@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Title from './';
-// import { GlobalContextProvider } from '../../context/GlobalContext';
 
 it('renders title component to the screen', () => {
   render(<Title />);
