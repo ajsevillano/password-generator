@@ -32,6 +32,7 @@ const Checkbox = ({
   return (
     <>
       <input
+        data-testid="inputcheckbox"
         className="input-checkbox"
         id={name}
         type="checkbox"
