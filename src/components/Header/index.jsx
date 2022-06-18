@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <div className="header" data-testid="header">
       <div className="lottie-animation">
-        <Lottie animationData={lock} />
+        <Lottie data-testid="animation" animationData={lock} />
       </div>
 
       <Title />

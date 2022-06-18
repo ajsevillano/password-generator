@@ -2,7 +2,7 @@ import Header from '../Header';
 
 const Index = ({ children }) => {
   return (
-    <div className="container">
+    <div data-testid="layout" className="container">
       <Header />
       <div className="main-contain">{children}</div>
     </div>
