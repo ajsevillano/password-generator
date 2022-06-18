@@ -11,7 +11,7 @@ import Input from '../Input';
 import CopyButton from '../CopyButton';
 import CheckBox from '../Checkbox';
 import Slider from '../Range-Slider';
-import SecureBar from '../SecureBar';
+import PasswordStrengthBar from '../PasswordStrengthBar';
 import RefreshButton from '../RefreshButton';
 
 //Icons
@@ -44,7 +44,7 @@ const App = () => {
       <div className="input-container">
         <FcLock size={35} className={'lock-icon'} />
         <RefreshButton />
-        <SecureBar />
+        <PasswordStrengthBar />
         <Input />
         <CopyButton />
       </div>

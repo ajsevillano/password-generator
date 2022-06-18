@@ -2,7 +2,7 @@
 import GlobalContext from '../../context/GlobalContext';
 import { useContext } from 'react';
 
-const SecureBar = () => {
+const PasswordStrengthBar = () => {
   //Context
   const { passwordLengthState } = useContext(GlobalContext);
   const { passLength } = passwordLengthState;
@@ -30,4 +30,4 @@ const SecureBar = () => {
   );
 };
 
-export default SecureBar;
+export default PasswordStrengthBar;
