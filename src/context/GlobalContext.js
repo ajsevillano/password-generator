@@ -3,7 +3,7 @@ import { defaultValues } from '../data/defaultValues';
 
 const Context = React.createContext({});
 
-export function GifsContextProvider({ children }) {
+export function GlobalContextProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [password, setPassword] = useState('');
   const [passLength, setPassLength] = useState(defaultValues.defaultLength);

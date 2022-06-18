@@ -1,13 +1,13 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import RefreshButton from './index';
-import { GifsContextProvider } from '../../context/GlobalContext';
+import { GlobalContextProvider } from '../../context/GlobalContext';
 
 it('renders refresh button to the screen', () => {
   render(
-    <GifsContextProvider>
+    <GlobalContextProvider>
       <RefreshButton />
-    </GifsContextProvider>
+    </GlobalContextProvider>
   );
   const mainContainer = screen.getByTestId('refreshbutton');
   expect(mainContainer).toBeInTheDocument();
@@ -15,9 +15,9 @@ it('renders refresh button to the screen', () => {
 
 it('The icon will spin when is clicked', () => {
   render(
-    <GifsContextProvider>
+    <GlobalContextProvider>
       <RefreshButton />
-    </GifsContextProvider>
+    </GlobalContextProvider>
   );
   const button = screen.getByRole('button');
   const icon = screen.getByTestId('icon');
