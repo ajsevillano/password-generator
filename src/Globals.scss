@@ -1,0 +1,12 @@
+@use './components/App/App';
+@use './components/Layout/Layout';
+@use './components/Input/Input';
+@use './components/CopyButton/CopyButton';
+@use './components/Checkbox/Checkbox';
+@use './components/PasswordStrengthBar/PasswordStrengthBar';
+@use './components/Range-Slider/Range-Slider';
+@use './components/Title/Title';
+@use './components/Header/Header';
+@use './components/RefreshButton/RefreshButton';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');

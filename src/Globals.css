@@ -1,5 +1,66 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+.slider-p {
+  font-size: 18px;
+}
+.slider-p span {
+  color: #333;
+  font-weight: 600;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.checkboxes-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.mega-container {
+  display: flex;
+  position: relative;
+  margin-bottom: 40px;
+  width: 70%;
+}
+
+.slider-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .slider-container {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .mega-container {
+    width: 100%;
+  }
+
+  .slider-p {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .sync-container {
+    right: 15px;
+    top: 14px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .lock-icon {
+    top: 11px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -57,6 +118,11 @@ p {
   color: #0b2138;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
+}
+.input-container .lock-icon {
+  position: absolute;
+  top: 16px;
+  left: 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -148,7 +214,6 @@ p {
 
 .label-input-checkbox .check-box {
   float: left;
-  vertical-align: middle;
   transform: translate3d(0, 0, 0);
 }
 
@@ -459,72 +524,4 @@ input[type=range]::-ms-thumb {
   animation: spin infinite 0.4s linear;
 }
 
-.lock-icon {
-  position: absolute;
-  top: 15px;
-  left: 10px;
-}
-
-.slider-p {
-  font-size: 18px;
-}
-.slider-p span {
-  color: #333;
-  font-weight: 600;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.checkboxes-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.mega-container {
-  display: flex;
-  position: relative;
-  margin-bottom: 40px;
-  width: 70%;
-}
-
-.slider-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-@media screen and (max-width: 768px) {
-  .slider-container {
-    flex-direction: column;
-    margin-top: 0;
-  }
-
-  .mega-container {
-    width: 100%;
-  }
-
-  .slider-p {
-    font-size: 22px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  .sync-container {
-    right: 15px;
-    top: 14px;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .lock-icon {
-    top: 11px;
-  }
-}
-
-/*# sourceMappingURL=App.css.map */
+/*# sourceMappingURL=Globals.css.map */
