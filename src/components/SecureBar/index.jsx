@@ -7,46 +7,25 @@ const SecureBar = () => {
   const { passwordLengthState } = useContext(GlobalContext);
   const { passLength } = passwordLengthState;
 
-  const passwordStrength = (colorParams) => {
-    switch (true) {
-      case passLength <= 3:
-        return colorParams === 'secure-bar'
-          ? 'very-weak-password'
-          : 'very-weak-password-background';
+  const passwordStrengthValues = [
+    { min: 0, max: 3, name: 'veryWeak' },
+    { min: 4, max: 10, name: 'weak' },
+    { min: 11, max: 15, name: 'medium' },
+    { min: 16, max: 20, name: 'strong' },
+    { min: 21, max: 30, name: 'veryStrong' },
+  ];
 
-      case passLength >= 4 && passLength <= 10:
-        return colorParams === 'secure-bar'
-          ? 'weak-password'
-          : 'weak-password-background';
-
-      case passLength >= 11 && passLength <= 15:
-        return colorParams === 'secure-bar'
-          ? 'medium-password'
-          : 'medium-password-background';
-
-      case passLength >= 16 && passLength <= 20:
-        return colorParams === 'secure-bar'
-          ? 'strong-password'
-          : 'strong-password-background';
-
-      case passLength >= 21 && passLength <= 30:
-        return colorParams === 'secure-bar'
-          ? 'very-strong-password'
-          : 'very-strong-password-background';
-
-      default:
-        return '';
-    }
+  const getPasswordStrength = () => {
+    const filterValue = passwordStrengthValues.filter(
+      (element) => passLength >= element.min && passLength <= element.max
+    );
+    return filterValue[0].name;
   };
 
   return (
     <>
-      <div className={`secure-bar ${passwordStrength('secure-bar')}`}></div>
-      <div
-        className={`secure-bar-background ${passwordStrength(
-          'secure-bar-background'
-        )}`}
-      ></div>
+      <div className={`secure-bar ${getPasswordStrength()}`}></div>
+      <div className={`secure-bar-background ${getPasswordStrength()}`}></div>
     </>
   );
 };

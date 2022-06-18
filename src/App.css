@@ -258,36 +258,35 @@ p {
   -o-transition: width 0.3s ease-in-out;
   transition: width 0.3s ease-in-out;
 }
-
-.very-weak-password,
-.weak-password {
-  background-color: #d63031;
+@media screen and (max-width: 768px) {
+  .secure-bar {
+    bottom: 104px;
+  }
 }
-
-.medium-password {
+.secure-bar.veryWeak {
+  background-color: #d63031;
+  width: 17.2%;
+}
+.secure-bar.weak {
+  background-color: #d63031;
+  width: 34.4%;
+}
+.secure-bar.medium {
   background-color: #f39c12;
   width: 51.6%;
 }
-
-.strong-password,
-.very-strong-password {
+.secure-bar.strong {
   background-color: #2ecc71;
-}
-
-.very-weak-password {
-  width: 17.2%;
-}
-
-.weak-password {
-  width: 34.4%;
-}
-
-.strong-password {
   width: 68.8%;
 }
-
-.very-strong-password {
+.secure-bar.veryStrong {
+  background-color: #2ecc71;
   width: 86%;
+}
+@media screen and (max-width: 768px) {
+  .secure-bar.veryStrong {
+    width: 100%;
+  }
 }
 
 .secure-bar-background {
@@ -298,51 +297,22 @@ p {
   width: 86%;
   z-index: 1;
 }
-
-.very-weak-password-background,
-.weak-password-background {
+.secure-bar-background.veryWeak, .secure-bar-background.weak {
   background-color: #e99990;
 }
-
-.medium-password-background {
+.secure-bar-background.medium {
   background-color: #f3e1c7;
 }
-
-.strong-password-background,
-.very-strong-password-background {
+.secure-bar-background.strong, .secure-bar-background.veryStrong {
   background-color: #c2e4d0;
 }
-
 @media screen and (max-width: 768px) {
-  .secure-bar {
-    bottom: 93px;
-  }
-
   .secure-bar-background {
-    bottom: 93px;
-    width: 100%;
-  }
-
-  .very-weak-password {
-    width: 10%;
-  }
-
-  .weak-password {
-    width: 40%;
-  }
-
-  .medium-password {
-    width: 60%;
-  }
-
-  .strong-password {
-    width: 80%;
-  }
-
-  .very-strong-password {
+    bottom: 104px;
     width: 100%;
   }
 }
+
 input[type=range] {
   -webkit-appearance: none;
   -moz-appearance: none;
