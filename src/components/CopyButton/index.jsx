@@ -29,7 +29,11 @@ const CopyButton = () => {
 
   const animation = passwordCopiedAnimation ? 'copied-animation' : '';
   return (
-    <button className={`button ${animation}`} onClick={copyToClipBoard}>
+    <button
+      data-testid="copybutton"
+      className={`button ${animation}`}
+      onClick={copyToClipBoard}
+    >
       <FaCopy size={22} /> <span>Copy</span>
     </button>
   );
