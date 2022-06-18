@@ -41,7 +41,7 @@ const App = () => {
 
   return (
     <Layout>
-      <div className="input-container">
+      <div className="input-container" data-testid="app">
         <FcLock size={35} className={'lock-icon'} />
         <RefreshButton />
         <PasswordStrengthBar />
