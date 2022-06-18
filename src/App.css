@@ -297,6 +297,12 @@ p {
   width: 86%;
   z-index: 1;
 }
+@media screen and (max-width: 768px) {
+  .secure-bar-background {
+    bottom: 104px;
+    width: 100%;
+  }
+}
 .secure-bar-background.veryWeak, .secure-bar-background.weak {
   background-color: #e99990;
 }
@@ -305,12 +311,6 @@ p {
 }
 .secure-bar-background.strong, .secure-bar-background.veryStrong {
   background-color: #c2e4d0;
-}
-@media screen and (max-width: 768px) {
-  .secure-bar-background {
-    bottom: 104px;
-    width: 100%;
-  }
 }
 
 input[type=range] {

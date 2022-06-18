@@ -22,5 +22,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+#scripts
 acp.sh
-sass.sh
+
+#Sass
+App.css.map

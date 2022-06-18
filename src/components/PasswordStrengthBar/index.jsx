@@ -2,18 +2,13 @@
 import GlobalContext from '../../context/GlobalContext';
 import { useContext } from 'react';
 
+//Data
+import { passwordStrengthValues } from '../../data/passwordStrengthValues';
+
 const PasswordStrengthBar = () => {
   //Context
   const { passwordLengthState } = useContext(GlobalContext);
   const { passLength } = passwordLengthState;
-
-  const passwordStrengthValues = [
-    { min: 0, max: 3, name: 'veryWeak' },
-    { min: 4, max: 10, name: 'weak' },
-    { min: 11, max: 15, name: 'medium' },
-    { min: 16, max: 20, name: 'strong' },
-    { min: 21, max: 30, name: 'veryStrong' },
-  ];
 
   const getPasswordStrength = () => {
     const filterValue = passwordStrengthValues.filter(
