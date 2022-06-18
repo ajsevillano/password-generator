@@ -6,7 +6,9 @@ const Input = () => {
   const { passwordState } = useContext(GlobalContext);
   const { password } = passwordState;
 
-  return <input type="text" defaultValue={password} readOnly />;
+  return (
+    <input data-testid="input" type="text" defaultValue={password} readOnly />
+  );
 };
 
 export default Input;
