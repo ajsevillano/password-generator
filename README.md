@@ -4,39 +4,51 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/932b456405d340868271fe85ef9a672f)](https://www.codacy.com/gh/ajsevillano/password-generator/dashboard?utm_source=github.com&utm_medium=referral&utm_content=ajsevillano/password-generator&utm_campaign=Badge_Grade)
 
-Custom password generator is a React.js app for producing random and strong passwords for using on a daily basis.
+The custom password generator is a React.js app for producing random and strong passwords for use daily.
 
 ## Password generator functionalities
 
-- Generate a password between 1 and 30 characters
-- Forces the use that at least 1 filter
-- Using lowercase, uppercase, symbols and numbers in your password
-- Visual security indicator
-- Mobile friendly
-- Copy to clipboard
+- 🔒 Generate a password between 1 and 30 characters
+- ❌ Forces the use that at least 1 filter
+- 🔤 Use lowercase, uppercase, symbols, and numbers in your password
+- 🎨 Visual security indicator
+- 📱 Mobile friendly
+- 📋 Copy to clipboard
 
 ## Demo
 
-You can find a working demo [https://www.ajsevillano.com/projects/password-generator/](https://www.ajsevillano.com/projects/password-generator/)
+You can find a working demo [HERE](https://lucid-goldberg-c11d8e.netlify.app/)
 
 ## Tech
 
-Random password generator is written using Sass, React.js and bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The random password generator is written using Sass Global (1.49.0), React.js (v 18.2.0), and bootstrapped with [Create React App](https://github.com/facebook/create-react-app). this app was developed under Node v16.13.1.
+
+Note: This app uses Standalone Sass (global mode),so Sass won't be installed when you clone this app and run npm i.
+To install Sass on standalone mode run on your terminal:
+
+```
+npm install -g sass
+```
+
+Or if you prefer install sass as a dev dependency, run:
+
+```
+npm install sass --save-dev
+```
 
 ## Download,launch & build the App
 
-To start using the App in your local enviroment,donwload or clone this repository and run
+To start using the App in your local environment, download or clone this repository and run
 
 ### `npm init`
 
-This will download all the necesary dependencies and create the necesary files to work, then run:
+This will download all the necessary dependencies and create the necessary files to work. To start the app in the development mode, run:
 
 ### `npm start`
 
-this will run the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view the app in the browser.
 
-The page will reload if you make edits.You will also see any lint errors in the console.
+The page will reload if you make edits. You will also see any lint errors in the console.
 
 ### `npm run build`
 
