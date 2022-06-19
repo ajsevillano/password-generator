@@ -6,7 +6,7 @@
 
 The custom password generator is a React.js app for producing random and strong passwords for use daily.
 
-![secure-password](https://user-images.githubusercontent.com/35935634/174480377-da8e4213-5cba-46f7-b556-2278325f7850.gif)
+![Secure Password](https://user-images.githubusercontent.com/35935634/174480940-2e787f38-bcc5-4922-b6cc-8298f374bdb6.gif)
 
 ## Password generator functionalities
 
@@ -23,7 +23,7 @@ You can find a working demo [HERE](https://lucid-goldberg-c11d8e.netlify.app/)
 
 ## Tech
 
-The random password generator is written using Sass Global (1.49.0), React.js (v 18.2.0), and bootstrapped with [Create React App](https://github.com/facebook/create-react-app). this app was developed under Node v16.13.1.
+The random password generator is written using Standalone Sass (1.49.0), React.js (v 18.2.0), and bootstrapped with [Create React App](https://github.com/facebook/create-react-app). this app was developed under Node v16.13.1.
 
 Note: This app uses Standalone Sass (global mode),so Sass won't be installed when you clone this app and run npm i.
 To install Sass on standalone mode run on your terminal:
