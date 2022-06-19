@@ -6,6 +6,8 @@
 
 The custom password generator is a React.js app for producing random and strong passwords for use daily.
 
+![secure-password](https://user-images.githubusercontent.com/35935634/174480377-da8e4213-5cba-46f7-b556-2278325f7850.gif)
+
 ## Password generator functionalities
 
 - 🔒 Generate a password between 1 and 30 characters
