@@ -17,32 +17,42 @@
   }
 }
 
+.sync-container {
+  position: absolute;
+  right: 130px;
+  top: 20px;
+  color: #ccc;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .checkboxes-container {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.mega-container {
+.slider-container {
   display: flex;
   position: relative;
   margin-bottom: 40px;
   width: 70%;
 }
 
-.slider-container {
+.slider-container-section {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
 @media screen and (max-width: 768px) {
-  .slider-container {
+  .slider-container-section {
     flex-direction: column;
     margin-top: 0;
   }
 
-  .mega-container {
+  .slider-container {
     width: 100%;
   }
 

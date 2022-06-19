@@ -49,11 +49,11 @@ const App = () => {
         <CopyButton />
       </div>
 
-      <div className="slider-container">
+      <div className="slider-container-section">
         <p className="slider-p">
           Password length:<span> {passLength} </span>
         </p>
-        <div className="mega-container">
+        <div className="slider-container">
           <Slider />
         </div>
       </div>

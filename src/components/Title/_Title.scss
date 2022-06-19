@@ -10,10 +10,8 @@
   p {
     margin-top: 15px;
   }
-}
 
-@media screen and (max-width: 768px) {
-  .title-container {
+  @media screen and (max-width: 768px) {
     h1 {
       font-size: 30px;
       text-align: center;
