@@ -1,6 +1,17 @@
 //Context
 import GlobalContext from '../../context/GlobalContext';
 import { useContext } from 'react';
+import React from 'react';
+
+interface Checkboxes {
+  name: string;
+  setCheckBoxes: any;
+  label: string;
+  labelMobile: string;
+  isChecked: boolean;
+  filters: boolean[]; //or Array<boolean>
+  updateCheckBox: any;
+}
 
 const Checkbox = ({
   name,
@@ -10,8 +21,8 @@ const Checkbox = ({
   isChecked,
   filters,
   updateCheckBox,
-}) => {
-  const { loadingState } = useContext(GlobalContext);
+}: Checkboxes) => {
+  const { loadingState }: any = useContext(GlobalContext);
   const { setLoading } = loadingState;
 
   // at least 1 checkbox MUST be checked all the time
@@ -21,7 +32,7 @@ const Checkbox = ({
   };
 
   //Checkboxes Handler
-  const handleCheckBox = (e) => {
+  const handleCheckBox = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLoading(true);
     setCheckBoxes(updateCheckBox(e));
     setTimeout(() => {

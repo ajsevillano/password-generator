@@ -39,6 +39,8 @@ const App = () => {
     return updateCheckBox;
   };
 
+  console.log(checkBoxes);
+
   return (
     <Layout>
       <div className="input-container" data-testid="app">
