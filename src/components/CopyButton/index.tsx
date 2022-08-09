@@ -8,11 +8,21 @@ import Confirm from '../../assets/confirm.wav';
 import GlobalContext from '../../context/GlobalContext';
 import { useContext } from 'react';
 
+//Interfaces
+interface Contexts {
+  [loadingState: string]: {};
+}
+
+//TO FIX
+interface Password {
+  [loadingState: string]: string;
+}
+
 const CopyButton = () => {
   const [passwordCopiedAnimation, setpasswordCopiedAnimation] = useState(false);
   //Context
-  const { passwordState } = useContext(GlobalContext);
-  const { password } = passwordState;
+  const { passwordState }: Contexts = useContext(GlobalContext);
+  const { password }: Password = passwordState;
 
   //Copy to Clipboard Button
   const copyToClipBoard = () => {
