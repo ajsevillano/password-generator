@@ -13,6 +13,15 @@ interface Checkboxes {
   updateCheckBox: any;
 }
 
+interface Contexts {
+  [loadingState: string]: {};
+}
+
+//TO FIX
+interface LoadingStates {
+  [setLoading: string]: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
 const Checkbox = ({
   name,
   setCheckBoxes,
@@ -22,8 +31,8 @@ const Checkbox = ({
   filters,
   updateCheckBox,
 }: Checkboxes) => {
-  const { loadingState }: any = useContext(GlobalContext);
-  const { setLoading } = loadingState;
+  const { loadingState }: Contexts = useContext(GlobalContext);
+  const { setLoading }: LoadingStates = loadingState;
 
   // at least 1 checkbox MUST be checked all the time
   const handleDisabled = () => {
