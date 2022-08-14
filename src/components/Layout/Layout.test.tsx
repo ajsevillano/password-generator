@@ -1,14 +1,15 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import Layout from '.';
 import { GlobalContextProvider } from '../../context/GlobalContext';
-import Slider from './';
 
-it('renders slider component to the screen', () => {
+it('renders the header to the screen', () => {
   render(
     <GlobalContextProvider>
-      <Slider />
+      <Layout />
     </GlobalContextProvider>
   );
-  const slider = screen.getByTestId('slider');
-  expect(slider).toBeInTheDocument();
+  const mainContainer = screen.getByTestId('layout');
+  expect(mainContainer).toBeInTheDocument();
 });

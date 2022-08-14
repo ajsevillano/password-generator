@@ -1,6 +1,7 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import PasswordStrengthBar from './';
+import PasswordStrengthBar from '.';
 import { GlobalContextProvider } from '../../context/GlobalContext';
 
 it('renders the password strength bar to the screen', () => {

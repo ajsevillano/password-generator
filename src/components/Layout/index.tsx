@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../Header';
 
 type Props = {
-  children: JSX.Element;
+  children?: JSX.Element;
 };
 
 const Index = ({ children }: Props) => {

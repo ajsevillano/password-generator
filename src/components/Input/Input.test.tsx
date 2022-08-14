@@ -1,6 +1,7 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Input from './';
+import Input from '.';
 import { GlobalContextProvider } from '../../context/GlobalContext';
 
 it('renders the input field & check its fields', () => {

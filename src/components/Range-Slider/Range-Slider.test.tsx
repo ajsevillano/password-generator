@@ -1,15 +1,15 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import CopyButton from './';
 import { GlobalContextProvider } from '../../context/GlobalContext';
+import Slider from '.';
 
-it('renders the copy button & check its fields', () => {
+it('renders slider component to the screen', () => {
   render(
     <GlobalContextProvider>
-      <CopyButton />
+      <Slider />
     </GlobalContextProvider>
   );
-  const button = screen.getByTestId('copybutton');
-  expect(button).toBeInTheDocument();
-  expect(button).toHaveClass('button');
+  const slider = screen.getByTestId('slider');
+  expect(slider).toBeInTheDocument();
 });

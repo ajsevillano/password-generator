@@ -1,6 +1,7 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Header from './';
+import Header from '.';
 import { GlobalContextProvider } from '../../context/GlobalContext';
 
 it('renders the header to the screen & check the lock animation is there', () => {
