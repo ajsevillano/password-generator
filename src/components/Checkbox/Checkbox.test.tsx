@@ -1,6 +1,7 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import CheckBox from './';
+import CheckBox from '.';
 import { GlobalContextProvider } from '../../context/GlobalContext';
 
 it('renders the checkbox to the screen', () => {
