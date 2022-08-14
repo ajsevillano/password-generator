@@ -1,6 +1,11 @@
+import React from 'react';
 import Header from '../Header';
 
-const Index = ({ children }) => {
+type Props = {
+  children: JSX.Element;
+};
+
+const Index = ({ children }: Props) => {
   return (
     <div data-testid="layout" className="container">
       <Header />

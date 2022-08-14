@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Title = () => {
   return (
     <div data-testid="title" className="title-container">
