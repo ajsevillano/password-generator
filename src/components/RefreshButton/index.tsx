@@ -1,3 +1,5 @@
+import React from 'react';
+
 //Icons
 import { FaSync } from 'react-icons/fa';
 import { generatePassword } from '../../utils/helpers';
@@ -7,15 +9,19 @@ import GlobalContext from '../../context/GlobalContext';
 import { useContext } from 'react';
 
 const RefreshButton = () => {
-  const { loadingState, passwordState, passwordLengthState, checkBoxesState } =
-    useContext(GlobalContext);
+  const {
+    loadingState,
+    passwordState,
+    passwordLengthState,
+    checkBoxesState,
+  }: any = useContext(GlobalContext);
   const { loading, setLoading } = loadingState;
   const { setPassword } = passwordState;
   const { passLength } = passwordLengthState;
   const { checkBoxes } = checkBoxesState;
 
   //Generate Password Button
-  const handleClick = (e) => {
+  const handleClick = (e: any) => {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {

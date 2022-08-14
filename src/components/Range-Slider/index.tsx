@@ -6,8 +6,8 @@ import { useContext } from 'react';
 
 //Interfaces
 interface Contexts {
-  passLength: any;
-  setPassLength: any;
+  passLength: number;
+  setPassLength: (targetValue: string) => void;
 }
 
 const Slider = () => {
@@ -16,7 +16,6 @@ const Slider = () => {
 
   //Slider Handler
   const handleSlider = (e: { target: { value: string } }) => {
-    console.log(e);
     setPassLength(e.target.value);
   };
 
