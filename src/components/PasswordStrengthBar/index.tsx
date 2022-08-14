@@ -1,10 +1,11 @@
+import React from 'react';
+
 //Context
 import GlobalContext from '../../context/GlobalContext';
 import { useContext } from 'react';
 
 //Data
 import { passwordStrengthValues } from '../../data/passwordStrengthValues';
-import React from 'react';
 
 //Interfaces
 interface Contexts {
