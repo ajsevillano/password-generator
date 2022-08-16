@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { defaultValues } from '../data/defaultValues';
 
-const Context = React.createContext({});
+const Context = React.createContext({
+  loadingState: { loading: true },
+  passwordState: { password: '' },
+  passwordLengthState: { passLength: 0 },
+  checkBoxesState: { checkBoxes: [{}] },
+});
 
 interface ContextStates {
   loading: boolean;
@@ -18,16 +23,31 @@ interface CheckBoxes {
   isChecked: boolean;
 }
 
+interface checkBoxesState {
+  checkBoxes: Array<CheckBoxes>;
+  setCheckBoxes: React.Dispatch<React.SetStateAction<CheckBoxes[]>>;
+}
+
+interface PasswordState {
+  password: string;
+  setPassword: React.Dispatch<React.SetStateAction<string>>;
+}
+
+interface PasswordLengthState {
+  passLength: number;
+  setPassLength: React.Dispatch<React.SetStateAction<number>>;
+}
+
 interface ContextValues {
   loadingState: Loading;
-  passwordState: {};
-  passwordLengthState: {};
-  checkBoxesState: {};
+  passwordState: PasswordState;
+  passwordLengthState: PasswordLengthState;
+  checkBoxesState: checkBoxesState;
 }
 
 type Loading = {
   loading: boolean;
-  setLoading: any;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 type Props = {

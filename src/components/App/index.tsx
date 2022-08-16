@@ -17,12 +17,36 @@ import RefreshButton from '../RefreshButton';
 //Icons
 import { FcLock } from 'react-icons/fc';
 
-interface EachCheckboxTypes {
-  id: React.Key | null | undefined;
-  name: string;
+//Types and interfaces
+import { EachCheckboxTypes } from './types';
+
+interface PasswordState {
+  password: string;
+  setPassword: (targetValue: string) => void;
+}
+
+interface PasswordLengthState {
+  passLength: string;
+  setPassLength: (targetValue: string) => void;
+}
+
+interface CheckBoxesState {
+  checkBoxes: Array<CheckBoxesArray>;
+  setCheckBoxes: (targetValue: string) => void;
+}
+
+interface CheckBoxesArray {
+  id: number;
+  isChecked: boolean;
   label: string;
   labelMobile: string;
-  isChecked: boolean;
+  name: string;
+}
+
+interface GlobalCtx {
+  passwordState: PasswordState;
+  passwordLengthState: PasswordLengthState;
+  checkBoxesState: CheckBoxesState;
 }
 
 const App = () => {
@@ -33,13 +57,15 @@ const App = () => {
   const { passLength } = passwordLengthState;
   const { checkBoxes, setCheckBoxes } = checkBoxesState;
 
+  console.log(checkBoxesState);
+
   useEffect(() => {
     setPassword(generatePassword(checkBoxes, passLength));
   }, [checkBoxes, passLength, setPassword]);
 
   //Update CheckBox
   const updateCheckBox = (e: {
-    target: { value: string; name: string; checked: any };
+    target: { value: string; name: string; checked: boolean };
   }) => {
     const updateCheckBox = checkBoxes.map((eachCheckBox: EachCheckboxTypes) => {
       return eachCheckBox.name === e.target.name
