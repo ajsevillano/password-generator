@@ -26,13 +26,13 @@ interface PasswordState {
 }
 
 interface PasswordLengthState {
-  passLength: string;
-  setPassLength: (targetValue: string) => void;
+  passLength: number;
+  setPassLength: (targetValue: number) => void;
 }
 
 interface CheckBoxesState {
   checkBoxes: Array<CheckBoxesArray>;
-  setCheckBoxes: (targetValue: string) => void;
+  setCheckBoxes: (targetValue: []) => void;
 }
 
 interface CheckBoxesArray {
@@ -51,13 +51,11 @@ interface GlobalCtx {
 
 const App = () => {
   //Contexts
-  const { passwordState, passwordLengthState, checkBoxesState }: any =
+  const { passwordState, passwordLengthState, checkBoxesState }: GlobalCtx =
     useContext(GlobalContext);
   const { setPassword } = passwordState;
   const { passLength } = passwordLengthState;
   const { checkBoxes, setCheckBoxes } = checkBoxesState;
-
-  console.log(checkBoxesState);
 
   useEffect(() => {
     setPassword(generatePassword(checkBoxes, passLength));

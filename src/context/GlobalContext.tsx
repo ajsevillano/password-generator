@@ -2,10 +2,18 @@ import React, { useState } from 'react';
 import { defaultValues } from '../data/defaultValues';
 
 const Context = React.createContext({
-  loadingState: { loading: true },
-  passwordState: { password: '' },
-  passwordLengthState: { passLength: 0 },
-  checkBoxesState: { checkBoxes: [{}] },
+  loadingState: { loading: true, setLoading: (loading: boolean) => {} },
+  passwordState: { password: '', setPassword: (password: string) => {} },
+  passwordLengthState: {
+    passLength: 0,
+    setPassLength: (passLength: number) => {},
+  },
+  checkBoxesState: {
+    checkBoxes: [
+      { id: 0, isChecked: false, name: '', label: '', labelMobile: '' },
+    ],
+    setCheckBoxes: (checkBoxes: []) => {},
+  },
 });
 
 interface ContextStates {
