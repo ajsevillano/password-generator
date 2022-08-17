@@ -71,6 +71,7 @@ const App = () => {
         : eachCheckBox;
     });
 
+    console.log(updateCheckBox);
     return updateCheckBox;
   };
 

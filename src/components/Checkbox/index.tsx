@@ -5,7 +5,7 @@ import React from 'react';
 
 interface Checkboxes {
   name: string;
-  setCheckBoxes: any;
+  setCheckBoxes: (targetValue: []) => void;
   label: string;
   labelMobile: string;
   isChecked: boolean;
