@@ -107,7 +107,7 @@ const App = () => {
               labelMobile={eachCheckBox.labelMobile}
               isChecked={eachCheckBox.isChecked}
               filters={checkBoxes.map(
-                (checked: { isChecked: any }) => checked.isChecked
+                (checked: { isChecked: boolean }) => checked.isChecked
               )}
               setCheckBoxes={setCheckBoxes}
               updateCheckBox={updateCheckBox}

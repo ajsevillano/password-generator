@@ -52,5 +52,5 @@ export const generatePassword = (
   const isChecked = checkBoxes.map((checked) => checked.isChecked);
   selectRightCharacters(isChecked);
   const password = randomizePassword(passLength);
-  return password;
+  return password!;
 };
