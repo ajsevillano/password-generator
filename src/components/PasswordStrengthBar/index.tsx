@@ -9,12 +9,15 @@ import { passwordStrengthValues } from '../../data/passwordStrengthValues';
 
 //Interfaces
 interface Contexts {
-  [loadingState: string]: {};
+  passwordLengthState: {
+    passLength: number;
+    setPassLength: (targetValue: number) => void;
+  };
 }
 
 //TO FIX
 interface Password {
-  [loadingState: string]: string;
+  passLength: number;
 }
 
 interface Element {

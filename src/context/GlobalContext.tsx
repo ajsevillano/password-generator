@@ -1,27 +1,12 @@
 import React, { useState } from 'react';
-import { defaultValues } from '../data/defaultValues';
+import { checkBoxesDefaultValues } from '../data/defaultValues';
 
-const Context = React.createContext({
-  loadingState: { loading: true, setLoading: (loading: boolean) => {} },
-  passwordState: { password: '', setPassword: (password: string) => {} },
-  passwordLengthState: {
-    passLength: 0,
-    setPassLength: (passLength: number) => {},
-  },
-  checkBoxesState: {
-    checkBoxes: [
-      { id: 0, isChecked: false, name: '', label: '', labelMobile: '' },
-    ],
-    setCheckBoxes: (checkBoxes: []) => {},
-  },
-});
+//Added this as ContextValues, investigate tomorrow
+const Context = React.createContext({} as ContextValuesObject);
 
-interface ContextStates {
-  loading: boolean;
-  password: string;
-  passLength: number;
-  checkBoxes: Array<CheckBoxes>;
-}
+type Props = {
+  children: JSX.Element;
+};
 
 interface CheckBoxes {
   id: number;
@@ -31,54 +16,49 @@ interface CheckBoxes {
   isChecked: boolean;
 }
 
-interface checkBoxesState {
-  checkBoxes: Array<CheckBoxes>;
-  setCheckBoxes: React.Dispatch<React.SetStateAction<CheckBoxes[]>>;
+interface ContextValuesObject {
+  loadingState: {
+    loading: boolean;
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  };
+  passwordState: {
+    password: string;
+    setPassword: React.Dispatch<React.SetStateAction<string>>;
+  };
+  passwordLengthState: {
+    passLength: number;
+    setPassLength: React.Dispatch<React.SetStateAction<number>>;
+  };
+  checkBoxesState: {
+    checkBoxes: Array<CheckBoxes>;
+    setCheckBoxes: React.Dispatch<React.SetStateAction<CheckBoxes[]>>;
+  };
 }
 
-interface PasswordState {
-  password: string;
-  setPassword: React.Dispatch<React.SetStateAction<string>>;
-}
-
-interface PasswordLengthState {
-  passLength: number;
-  setPassLength: React.Dispatch<React.SetStateAction<number>>;
-}
-
-interface ContextValues {
-  loadingState: Loading;
-  passwordState: PasswordState;
-  passwordLengthState: PasswordLengthState;
-  checkBoxesState: checkBoxesState;
-}
-
-type Loading = {
+interface ContextStates {
   loading: boolean;
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-type Props = {
-  children: JSX.Element;
-};
+  password: string;
+  passLength: number;
+  checkBoxes: Array<CheckBoxes>;
+}
 
 export function GlobalContextProvider({ children }: Props) {
   const [loading, setLoading] = useState<ContextStates['loading']>(false);
   const [password, setPassword] = useState<ContextStates['password']>('');
-  const [passLength, setPassLength] = useState<ContextStates['passLength']>(
-    defaultValues.defaultLength
-  );
+  const [passLength, setPassLength] = useState<ContextStates['passLength']>(16);
   const [checkBoxes, setCheckBoxes] = useState<ContextStates['checkBoxes']>(
-    defaultValues.checkBoxesValues
+    checkBoxesDefaultValues.values
   );
 
-  const contextValues: ContextValues = {
+  const contextValuesObject: ContextValuesObject = {
     loadingState: { loading, setLoading },
     passwordState: { password, setPassword },
     passwordLengthState: { passLength, setPassLength },
     checkBoxesState: { checkBoxes, setCheckBoxes },
   };
 
-  return <Context.Provider value={contextValues}>{children}</Context.Provider>;
+  return (
+    <Context.Provider value={contextValuesObject}>{children}</Context.Provider>
+  );
 }
 export default Context;
