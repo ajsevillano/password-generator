@@ -20,6 +20,7 @@ interface PasswordState {
 
 const CopyButton = () => {
   const [passwordCopiedAnimation, setpasswordCopiedAnimation] = useState(false);
+
   //Context
   const { passwordState }: ContextTypes = useContext(GlobalContext);
   const { password }: ContextTypes['passwordState'] = passwordState;
