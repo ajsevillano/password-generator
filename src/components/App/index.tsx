@@ -18,7 +18,13 @@ import RefreshButton from '../RefreshButton';
 import { FcLock } from 'react-icons/fc';
 
 //Types and interfaces
-import { EachCheckboxTypes } from './types';
+interface EachCheckboxTypes {
+  id: React.Key | null | undefined;
+  name: string;
+  label: string;
+  labelMobile: string;
+  isChecked: boolean;
+}
 
 interface PasswordState {
   password: string;

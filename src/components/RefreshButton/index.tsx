@@ -8,20 +8,58 @@ import { generatePassword } from '../../utils/helpers';
 import GlobalContext from '../../context/GlobalContext';
 import { useContext } from 'react';
 
+//Interfaces
+interface PasswordState {
+  password: string;
+  setPassword: (targetValue: string) => void;
+}
+
+interface LoadingState {
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+interface PasswordLengthState {
+  passLength: number;
+  setPassLength: (targetValue: number) => void;
+}
+
+interface CheckBoxesState {
+  checkBoxes: Array<CheckBoxesArray>;
+  setCheckBoxes: (targetValue: []) => void;
+}
+
+interface CheckBoxesArray {
+  id: number;
+  isChecked: boolean;
+  label: string;
+  labelMobile: string;
+  name: string;
+}
+
+interface ContextTypes {
+  passwordState: PasswordState;
+  passwordLengthState: PasswordLengthState;
+  checkBoxesState: CheckBoxesState;
+  loadingState: LoadingState;
+}
+
 const RefreshButton = () => {
   const {
     loadingState,
     passwordState,
     passwordLengthState,
     checkBoxesState,
-  }: any = useContext(GlobalContext);
-  const { loading, setLoading } = loadingState;
-  const { setPassword } = passwordState;
-  const { passLength } = passwordLengthState;
-  const { checkBoxes } = checkBoxesState;
+  }: ContextTypes = useContext(GlobalContext);
+  const { loading, setLoading }: ContextTypes['loadingState'] = loadingState;
+  const { setPassword }: ContextTypes['passwordState'] = passwordState;
+  const { passLength }: ContextTypes['passwordLengthState'] =
+    passwordLengthState;
+  const { checkBoxes }: CheckBoxesState = checkBoxesState;
 
   //Generate Password Button
-  const handleClick = (e: any) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    console.log(e);
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
