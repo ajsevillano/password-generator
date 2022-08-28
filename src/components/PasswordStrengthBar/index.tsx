@@ -8,25 +8,26 @@ import { useContext } from 'react';
 import { passwordStrengthValues } from '../../data/passwordStrengthValues';
 
 //Interfaces
-interface Contexts {
-  [loadingState: string]: {};
+interface ContextTypes {
+  passwordLengthState: PasswordLengthState;
 }
 
-//TO FIX
-interface Password {
-  [loadingState: string]: string;
+interface PasswordLengthState {
+  passLength: number;
+  setPassLength: (targetValue: number) => void;
 }
 
 interface Element {
-  max: any;
-  min: any;
+  max: number;
+  min: number;
   name: string;
 }
 
 const PasswordStrengthBar = () => {
   //Context
-  const { passwordLengthState }: Contexts = useContext(GlobalContext);
-  const { passLength }: Password = passwordLengthState;
+  const { passwordLengthState }: ContextTypes = useContext(GlobalContext);
+  const { passLength }: ContextTypes['passwordLengthState'] =
+    passwordLengthState;
 
   const getPasswordStrength = () => {
     const filterValue = passwordStrengthValues.filter(

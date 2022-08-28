@@ -4,18 +4,18 @@ import { useContext } from 'react';
 import React from 'react';
 
 //Interfaces
-interface Contexts {
-  [loadingState: string]: {};
+interface ContextTypes {
+  passwordState: PasswordState;
 }
 
-//TO FIX
-interface Password {
-  [loadingState: string]: string;
+interface PasswordState {
+  password: string;
+  setPassword: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const Input = () => {
-  const { passwordState }: Contexts = useContext(GlobalContext);
-  const { password }: Password = passwordState;
+  const { passwordState }: ContextTypes = useContext(GlobalContext);
+  const { password }: ContextTypes['passwordState'] = passwordState;
 
   return (
     <input data-testid="input" type="text" defaultValue={password} readOnly />

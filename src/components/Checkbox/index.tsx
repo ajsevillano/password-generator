@@ -5,7 +5,7 @@ import React from 'react';
 
 interface Checkboxes {
   name: string;
-  setCheckBoxes: any;
+  setCheckBoxes: (targetValue: []) => void;
   label: string;
   labelMobile: string;
   isChecked: boolean;
@@ -13,13 +13,14 @@ interface Checkboxes {
   updateCheckBox: any;
 }
 
-interface Contexts {
-  [loadingState: string]: {};
+//Interfaces
+interface ContextTypes {
+  loadingState: LoadingState;
 }
 
-//TO FIX
-interface LoadingStates {
-  [setLoading: string]: React.Dispatch<React.SetStateAction<boolean>>;
+interface LoadingState {
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Checkbox = ({
@@ -31,8 +32,8 @@ const Checkbox = ({
   filters,
   updateCheckBox,
 }: Checkboxes) => {
-  const { loadingState }: Contexts = useContext(GlobalContext);
-  const { setLoading }: LoadingStates = loadingState;
+  const { loadingState }: ContextTypes = useContext(GlobalContext);
+  const { setLoading }: ContextTypes['loadingState'] = loadingState;
 
   // at least 1 checkbox MUST be checked all the time
   const handleDisabled = () => {

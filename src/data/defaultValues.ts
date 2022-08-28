@@ -1,6 +1,5 @@
-export const defaultValues = {
-  defaultLength: 16,
-  checkBoxesValues: [
+export const checkBoxesDefaultValues = {
+  values: [
     {
       id: 0,
       name: 'uppercase',

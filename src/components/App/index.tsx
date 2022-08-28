@@ -17,6 +17,7 @@ import RefreshButton from '../RefreshButton';
 //Icons
 import { FcLock } from 'react-icons/fc';
 
+//Types and interfaces
 interface EachCheckboxTypes {
   id: React.Key | null | undefined;
   name: string;
@@ -25,9 +26,38 @@ interface EachCheckboxTypes {
   isChecked: boolean;
 }
 
+interface PasswordState {
+  password: string;
+  setPassword: (targetValue: string) => void;
+}
+
+interface PasswordLengthState {
+  passLength: number;
+  setPassLength: (targetValue: number) => void;
+}
+
+interface CheckBoxesState {
+  checkBoxes: Array<CheckBoxesArray>;
+  setCheckBoxes: (targetValue: []) => void;
+}
+
+interface CheckBoxesArray {
+  id: number;
+  isChecked: boolean;
+  label: string;
+  labelMobile: string;
+  name: string;
+}
+
+interface GlobalCtx {
+  passwordState: PasswordState;
+  passwordLengthState: PasswordLengthState;
+  checkBoxesState: CheckBoxesState;
+}
+
 const App = () => {
   //Contexts
-  const { passwordState, passwordLengthState, checkBoxesState }: any =
+  const { passwordState, passwordLengthState, checkBoxesState }: GlobalCtx =
     useContext(GlobalContext);
   const { setPassword } = passwordState;
   const { passLength } = passwordLengthState;
@@ -39,7 +69,7 @@ const App = () => {
 
   //Update CheckBox
   const updateCheckBox = (e: {
-    target: { value: string; name: string; checked: any };
+    target: { value: string; name: string; checked: boolean };
   }) => {
     const updateCheckBox = checkBoxes.map((eachCheckBox: EachCheckboxTypes) => {
       return eachCheckBox.name === e.target.name
@@ -47,6 +77,7 @@ const App = () => {
         : eachCheckBox;
     });
 
+    console.log(updateCheckBox);
     return updateCheckBox;
   };
 
@@ -83,7 +114,7 @@ const App = () => {
               labelMobile={eachCheckBox.labelMobile}
               isChecked={eachCheckBox.isChecked}
               filters={checkBoxes.map(
-                (checked: { isChecked: any }) => checked.isChecked
+                (checked: { isChecked: boolean }) => checked.isChecked
               )}
               setCheckBoxes={setCheckBoxes}
               updateCheckBox={updateCheckBox}

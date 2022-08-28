@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { defaultValues } from '../data/defaultValues';
+import { checkBoxesDefaultValues } from '../data/defaultValues';
 
-const Context = React.createContext({});
+//Added this as ContextValues, investigate tomorrow
+const Context = React.createContext({} as ContextValuesObject);
 
-interface ContextStates {
-  loading: boolean;
-  password: string;
-  passLength: number;
-  checkBoxes: Array<CheckBoxes>;
-}
+type Props = {
+  children: JSX.Element;
+};
 
 interface CheckBoxes {
   id: number;
@@ -18,39 +16,49 @@ interface CheckBoxes {
   isChecked: boolean;
 }
 
-interface ContextValues {
-  loadingState: Loading;
-  passwordState: {};
-  passwordLengthState: {};
-  checkBoxesState: {};
+interface ContextValuesObject {
+  loadingState: {
+    loading: boolean;
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  };
+  passwordState: {
+    password: string;
+    setPassword: React.Dispatch<React.SetStateAction<string>>;
+  };
+  passwordLengthState: {
+    passLength: number;
+    setPassLength: React.Dispatch<React.SetStateAction<number>>;
+  };
+  checkBoxesState: {
+    checkBoxes: Array<CheckBoxes>;
+    setCheckBoxes: React.Dispatch<React.SetStateAction<CheckBoxes[]>>;
+  };
 }
 
-type Loading = {
+interface ContextStates {
   loading: boolean;
-  setLoading: any;
-};
-
-type Props = {
-  children: JSX.Element;
-};
+  password: string;
+  passLength: number;
+  checkBoxes: Array<CheckBoxes>;
+}
 
 export function GlobalContextProvider({ children }: Props) {
   const [loading, setLoading] = useState<ContextStates['loading']>(false);
   const [password, setPassword] = useState<ContextStates['password']>('');
-  const [passLength, setPassLength] = useState<ContextStates['passLength']>(
-    defaultValues.defaultLength
-  );
+  const [passLength, setPassLength] = useState<ContextStates['passLength']>(16);
   const [checkBoxes, setCheckBoxes] = useState<ContextStates['checkBoxes']>(
-    defaultValues.checkBoxesValues
+    checkBoxesDefaultValues.values
   );
 
-  const contextValues: ContextValues = {
+  const contextValuesObject: ContextValuesObject = {
     loadingState: { loading, setLoading },
     passwordState: { password, setPassword },
     passwordLengthState: { passLength, setPassLength },
     checkBoxesState: { checkBoxes, setCheckBoxes },
   };
 
-  return <Context.Provider value={contextValues}>{children}</Context.Provider>;
+  return (
+    <Context.Provider value={contextValuesObject}>{children}</Context.Provider>
+  );
 }
 export default Context;

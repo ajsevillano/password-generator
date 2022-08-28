@@ -5,18 +5,23 @@ import GlobalContext from '../../context/GlobalContext';
 import { useContext } from 'react';
 
 //Interfaces
-interface Contexts {
+interface ContextTypes {
+  passwordLengthState: PasswordLengthState;
+}
+
+interface PasswordLengthState {
   passLength: number;
-  setPassLength: (targetValue: string) => void;
+  setPassLength: (targetValue: number) => void;
 }
 
 const Slider = () => {
-  const { passwordLengthState }: any = useContext(GlobalContext);
-  const { passLength, setPassLength }: Contexts = passwordLengthState;
+  const { passwordLengthState }: ContextTypes = useContext(GlobalContext);
+  const { passLength, setPassLength }: ContextTypes['passwordLengthState'] =
+    passwordLengthState;
 
   //Slider Handler
   const handleSlider = (e: { target: { value: string } }) => {
-    setPassLength(e.target.value);
+    setPassLength(Number(e.target.value));
   };
 
   return (

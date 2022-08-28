@@ -9,20 +9,20 @@ import GlobalContext from '../../context/GlobalContext';
 import { useContext } from 'react';
 
 //Interfaces
-interface Contexts {
-  [loadingState: string]: {};
+interface ContextTypes {
+  passwordState: PasswordState;
 }
 
-//TO FIX
-interface Password {
-  [loadingState: string]: string;
+interface PasswordState {
+  password: string;
+  setPassword: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const CopyButton = () => {
   const [passwordCopiedAnimation, setpasswordCopiedAnimation] = useState(false);
   //Context
-  const { passwordState }: Contexts = useContext(GlobalContext);
-  const { password }: Password = passwordState;
+  const { passwordState }: ContextTypes = useContext(GlobalContext);
+  const { password }: ContextTypes['passwordState'] = passwordState;
 
   //Copy to Clipboard Button
   const copyToClipBoard = () => {
