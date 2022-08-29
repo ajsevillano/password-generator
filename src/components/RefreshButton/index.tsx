@@ -59,7 +59,6 @@ const RefreshButton = () => {
 
   //Generate Password Button
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log(e);
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {

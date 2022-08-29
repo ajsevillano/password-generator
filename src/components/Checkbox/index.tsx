@@ -10,7 +10,7 @@ interface Checkboxes {
   labelMobile: string;
   isChecked: boolean;
   filters: boolean[]; //or Array<boolean>
-  updateCheckBox: any;
+  updateCheckBox: Function;
 }
 
 //Interfaces
