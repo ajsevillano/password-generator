@@ -19,7 +19,7 @@ import { FcLock } from 'react-icons/fc';
 
 //Types and interfaces
 interface EachCheckboxTypes {
-  id: React.Key | null | undefined;
+  id: number | null | undefined;
   name: string;
   label: string;
   labelMobile: string;

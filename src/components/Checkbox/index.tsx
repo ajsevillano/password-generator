@@ -1,6 +1,6 @@
 //Context
 import GlobalContext from '../../context/GlobalContext';
-import { useContext } from 'react';
+import { useContext, Dispatch, SetStateAction, ChangeEvent } from 'react';
 
 interface Checkboxes {
   name: string;
@@ -19,7 +19,7 @@ interface ContextTypes {
 
 interface LoadingState {
   loading: boolean;
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setLoading: Dispatch<SetStateAction<boolean>>;
 }
 
 const Checkbox = ({
@@ -41,7 +41,7 @@ const Checkbox = ({
   };
 
   //Checkboxes Handler
-  const handleCheckBox = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCheckBox = (e: ChangeEvent<HTMLInputElement>) => {
     setLoading(true);
     setCheckBoxes(updateCheckBox(e));
     setTimeout(() => {
