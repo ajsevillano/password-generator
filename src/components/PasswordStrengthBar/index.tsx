@@ -1,5 +1,3 @@
-import React from 'react';
-
 //Context
 import GlobalContext from '../../context/GlobalContext';
 import { useContext } from 'react';

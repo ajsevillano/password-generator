@@ -4,7 +4,6 @@ import Title from '../Title';
 //Lottie animation helper and json import
 import Lottie from 'lottie-react';
 import lock from '../../assets/lock.json';
-import React from 'react';
 
 const Header = () => {
   return (

@@ -1,5 +1,5 @@
 //Libs
-import React, { useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { generatePassword } from '../../utils/helpers';
 
 //Context

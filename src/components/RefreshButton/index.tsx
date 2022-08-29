@@ -1,5 +1,3 @@
-import React from 'react';
-
 //Icons
 import { FaSync } from 'react-icons/fa';
 import { generatePassword } from '../../utils/helpers';

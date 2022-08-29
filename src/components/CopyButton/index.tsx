@@ -1,5 +1,5 @@
 import { FaCopy } from 'react-icons/fa';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 //Sounds
 import Confirm from '../../assets/confirm.wav';
