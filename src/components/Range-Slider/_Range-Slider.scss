@@ -13,8 +13,7 @@ input[type='range'] {
   outline: none;
   -webkit-tap-highlight-color: transparent;
 }
-
-//Track bar Firefox and MS (No custom style in webkit)
+/* Mobile styles */ /* Track bar Firefox and MS (No custom style in webkit) */
 
 input[type='range']::-moz-range-track {
   width: 100%;
@@ -34,7 +33,7 @@ input[type='range']::-ms-track {
   border-color: transparent;
 }
 
-//Progress bar Firefox and MS (No custom style in webkit)
+/*Progress bar Firefox and MS (No custom style in webkit)*/
 
 input[type='range']::-ms-fill-lower,
 input[type='range']::-ms-fill-upper {
@@ -48,9 +47,9 @@ input[type='range']::-ms-fill-lower {
   background: #ff4163;
 }
 
-//Thumbs
+/* Thumbs */
 
-//WebKit (Chrome,Opera,Safari,etc)
+/*WebKit (Chrome,Opera,Safari,etc) */
 input[type='range']::-webkit-slider-thumb {
   border: 8px solid #fff;
   height: 34px;
@@ -63,10 +62,10 @@ input[type='range']::-webkit-slider-thumb {
   transform: translate(-2%, 14%);
 }
 
-//Firefox & IE
+/*Firefox & IE*/
 input[type='range']::-moz-range-thumb,
 input[type='range']::-ms-thumb {
-  border: 6px solid rgb(238, 238, 238);
+  border: 6px solid #eee;
   height: 34px;
   width: 34px;
   border-radius: 100px;
@@ -74,8 +73,8 @@ input[type='range']::-ms-thumb {
   cursor: pointer;
 }
 
-//Because there are not a native custom style in Webkit for the Track bar,
-//I created a custom div to replace the Track and Progress bar
+/*Because there are not a native custom style in Webkit for the Track bar,
+I created a custom div to replace the Track and Progress bar */
 .track-bar {
   position: absolute;
   border-radius: 10px;

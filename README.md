@@ -28,7 +28,7 @@ The random password generator is written using Standalone Sass (1.49.0), React.j
 Note: This app uses Standalone Sass (global mode),so Sass won't be installed when you clone this app and run npm i.
 To install Sass on standalone mode run on your terminal:
 
-```
+```javascript
 npm install -g sass
 ```
 

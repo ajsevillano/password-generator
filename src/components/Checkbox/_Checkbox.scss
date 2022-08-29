@@ -12,13 +12,13 @@
   transform: translate3d(0, 0, 0);
 }
 
-//Hidden default checkbox
+/* Hidden default checkbox */
 .input-checkbox {
   position: absolute;
   visibility: hidden;
 }
 
-//Checkbox
+/* Checkbox */
 .label-input-checkbox span:first-child {
   position: relative;
   width: 18px;
@@ -78,7 +78,7 @@
   display: none;
 }
 
-//Animations
+/* Animations*/
 @-moz-keyframes wave {
   50% {
     transform: scale(0.9);
@@ -103,7 +103,7 @@
   }
 }
 
-//Mobile
+/* Mobile */
 @media screen and (max-width: 768px) {
   .label-input-checkbox .check-box-label {
     display: none;
