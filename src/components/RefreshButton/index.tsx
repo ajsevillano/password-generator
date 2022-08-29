@@ -4,7 +4,7 @@ import { generatePassword } from '../../utils/helpers';
 
 //Context
 import GlobalContext from '../../context/GlobalContext';
-import { useContext } from 'react';
+import { Dispatch, SetStateAction, useContext } from 'react';
 
 //Interfaces
 interface PasswordState {
@@ -14,7 +14,7 @@ interface PasswordState {
 
 interface LoadingState {
   loading: boolean;
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setLoading: Dispatch<SetStateAction<boolean>>;
 }
 
 interface PasswordLengthState {

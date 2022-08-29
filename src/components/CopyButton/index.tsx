@@ -1,5 +1,5 @@
 import { FaCopy } from 'react-icons/fa';
-import { useState } from 'react';
+import { useState, Dispatch, SetStateAction } from 'react';
 
 //Sounds
 import Confirm from '../../assets/confirm.wav';
@@ -15,7 +15,7 @@ interface ContextTypes {
 
 interface PasswordState {
   password: string;
-  setPassword: React.Dispatch<React.SetStateAction<string>>;
+  setPassword: Dispatch<SetStateAction<string>>;
 }
 
 const CopyButton = () => {

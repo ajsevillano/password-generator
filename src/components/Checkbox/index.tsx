@@ -1,7 +1,6 @@
 //Context
 import GlobalContext from '../../context/GlobalContext';
 import { useContext } from 'react';
-import React from 'react';
 
 interface Checkboxes {
   name: string;

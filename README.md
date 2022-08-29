@@ -34,7 +34,7 @@ npm install -g sass
 
 Or if you prefer install sass as a dev dependency, run:
 
-```
+```javascript
 npm install sass --save-dev
 ```
 

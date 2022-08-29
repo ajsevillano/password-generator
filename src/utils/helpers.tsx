@@ -17,7 +17,7 @@ const charactersObject = [
 
 // If the checkbox is checked, then add the corresponding character to the charactersString variable.
 const selectRightCharacters = (isChecked: boolean[]) => {
-  isChecked.map((everyCheck, index) => {
+  isChecked.map((everyCheck: boolean, index: number) => {
     return (
       everyCheck === true &&
       (charactersString += Object.values(charactersObject[index]))
