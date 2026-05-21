@@ -1,63 +1,56 @@
-# Custom password generator v 1.0
+# Password Generator
 
-![](https://www.ajsevillano.com/pg-screenshot.jpg)
+> A React app that generates random, secure passwords with configurable length and character sets.
 
+![React](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat&logo=typescript&logoColor=white)
+![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=flat&logo=sass&logoColor=white)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/932b456405d340868271fe85ef9a672f)](https://www.codacy.com/gh/ajsevillano/password-generator/dashboard?utm_source=github.com&utm_medium=referral&utm_content=ajsevillano/password-generator&utm_campaign=Badge_Grade)
 
-The custom password generator is a React.js app for producing random and strong passwords for use daily.
+![Demo](https://user-images.githubusercontent.com/35935634/174480940-2e787f38-bcc5-4922-b6cc-8298f374bdb6.gif)
 
-![Secure Password](https://user-images.githubusercontent.com/35935634/174480940-2e787f38-bcc5-4922-b6cc-8298f374bdb6.gif)
+## Live Demo
 
-## Password generator functionalities
+[lucid-goldberg-c11d8e.netlify.app](https://lucid-goldberg-c11d8e.netlify.app/)
 
-- 🔒 Generate a password between 1 and 30 characters
-- ❌ Forces the use that at least 1 filter
-- 🔤 Use lowercase, uppercase, symbols, and numbers in your password
-- 🎨 Visual security indicator
-- 📱 Mobile friendly
-- 📋 Copy to clipboard
+## Features
 
-## Demo
+- Generate passwords between 1 and 30 characters
+- Mix lowercase, uppercase, numbers and symbols
+- Visual strength indicator
+- Copy to clipboard
+- Forces at least one character type to be selected
+- Mobile friendly
 
-You can find a working demo [HERE](https://lucid-goldberg-c11d8e.netlify.app/)
+## Tech Stack
 
-## Tech
+| Layer | Technology |
+|-------|-----------|
+| UI Framework | React 18 + TypeScript |
+| Styles | SCSS |
+| Deployment | Netlify |
 
-The random password generator is written using Standalone Sass (1.49.0), React.js (v 18.2.0), and bootstrapped with [Create React App](https://github.com/facebook/create-react-app). this app was developed under Node v16.13.1.
+## Getting Started
 
-Note: This app uses Standalone Sass (global mode),so Sass won't be installed when you clone this app and run npm i.
-To install Sass on standalone mode run on your terminal:
-
-```javascript
-npm install -g sass
+```bash
+git clone https://github.com/ajsevillano/password-generator.git
+cd password-generator
+npm install
+npm start
 ```
 
-Or if you prefer install sass as a dev dependency, run:
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-```javascript
-npm install sass --save-dev
-```
+> **Note:** This project uses Sass in standalone (global) mode. If styles don't compile, install it globally: `npm install -g sass`
 
-## Download,launch & build the App
+## Scripts
 
-To start using the App in your local environment, download or clone this repository and run
+| Command | Description |
+|---------|-------------|
+| `npm start` | Start development server |
+| `npm run build` | Build for production |
+| `npm test` | Run tests |
 
-### `npm init`
+## License
 
-This will download all the necessary dependencies and create the necessary files to work. To start the app in the development mode, run:
-
-### `npm start`
-
-Open [http://localhost:3000](http://localhost:3000) to view the app in the browser.
-
-The page will reload if you make edits. You will also see any lint errors in the console.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+MIT
