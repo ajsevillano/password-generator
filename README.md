@@ -15,12 +15,12 @@
 
 ## Features
 
-- Generate passwords between 1 and 30 characters
-- Mix lowercase, uppercase, numbers and symbols
-- Visual strength indicator
-- Copy to clipboard
-- Forces at least one character type to be selected
-- Mobile friendly
+- 🔒 Generate passwords between 1 and 30 characters
+- 🔤 Mix lowercase, uppercase, numbers and symbols
+- 🎨 Visual strength indicator so you know how secure your password is
+- 📋 One-click copy to clipboard
+- ❌ Requires at least one character type to be selected
+- 📱 Fully responsive, works on mobile
 
 ## Tech Stack
 
