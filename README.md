@@ -7,11 +7,13 @@
 ![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=flat&logo=sass&logoColor=white)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/932b456405d340868271fe85ef9a672f)](https://www.codacy.com/gh/ajsevillano/password-generator/dashboard?utm_source=github.com&utm_medium=referral&utm_content=ajsevillano/password-generator&utm_campaign=Badge_Grade)
 
+🔗 **[Live Demo](https://lucid-goldberg-c11d8e.netlify.app/)**
+
 ![Demo](https://user-images.githubusercontent.com/35935634/174480940-2e787f38-bcc5-4922-b6cc-8298f374bdb6.gif)
 
-## Live Demo
+## About
 
-[lucid-goldberg-c11d8e.netlify.app](https://lucid-goldberg-c11d8e.netlify.app/)
+One of my first useful tools, built with several goals in mind: understanding the basics of password security, getting hands-on with React and TypeScript, and shipping something practical rather than just another tutorial clone. It was also a good exercise in managing multiple pieces of interdependent state and surfacing meaningful feedback to the user through the strength indicator.
 
 ## Features
 
@@ -50,6 +52,10 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 | `npm start` | Start development server |
 | `npm run build` | Build for production |
 | `npm test` | Run tests |
+
+## Contributing
+
+Found a bug or have an idea? Feel free to open an issue.
 
 ## License
 
